@@ -1,0 +1,265 @@
+.formalize() {
+    /*
+        Adaptation of Formalize by Nathan Smith
+        Make things more uniform. Dress up your forms.
+        http://host.sonspring.com/formalize/
+
+        Don't forget to use the javascript files that can be found here : http://github.com/nathansmith/formalize/
+
+    */
+
+
+    /* `Widths
+    ----------------------------------------------------------------------------------------------------*/
+
+    .input_tiny {
+      width: 50px;
+    }
+
+    .input_small {
+      width: 100px;
+    }
+
+    .input_medium {
+      width: 150px;
+    }
+
+    .input_large {
+      width: 200px;
+    }
+
+    .input_xlarge {
+      width: 250px;
+    }
+
+    .input_xxlarge {
+      width: 300px;
+    }
+
+    .input_full {
+      width: 100%;
+    }
+
+    /*
+      Added via JS to <textarea> and class="input_full".
+      Applies only to IE7. Other browsers don't need it.
+    */
+    .input_full_wrap {
+      display: block;
+      padding-right: 8px;
+    }
+
+    /* `UI Consistency
+    ----------------------------------------------------------------------------------------------------*/
+
+    ::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    input[type="search"]::-webkit-search-decoration {
+      display: none;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    button,
+    input[type="reset"],
+    input[type="submit"],
+    input[type="button"] {
+      -webkit-appearance: none;
+      .border-radius(11px);
+      .background-clip(padding);
+      background: #ddd;
+      .vertical-gradient(#fff, #ddd);
+      border: 1px solid;
+      border-color: #ddd #bbb #999;
+      cursor: pointer;
+      color: #333;
+      font: bold 12px/1.2 Arial, sans-serif;
+      outline: 0;
+      overflow: visible;
+      padding: 3px 10px 4px;
+      text-shadow: #fff 0 1px 1px;
+      width: auto;
+
+      /* IE7 */
+      *padding-top: 2px;
+      *padding-bottom: 0px;
+    }
+
+    button {
+      /* IE7 */
+      *padding-top: 1px;
+      *padding-bottom: 1px;
+    }
+
+    textarea,
+    select,
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"] {
+      -webkit-appearance: none;
+      .border-radius(5px);
+      .box-sizing(border-box);
+      .background-clip(padding);
+      background-color: #fff;
+      border: 1px solid;
+      border-color: #848484 #c1c1c1 #e1e1e1;
+      color: #000;
+      outline: 0;
+      padding: 2px 3px;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+
+      /* IE7 */
+      *padding-top: 2px;
+      *padding-bottom: 1px;
+    }
+
+    /*
+      Separate rule for Firefox.
+      Cannot stack with WebKit's.
+    */
+    input.placeholder_text,
+    textarea.placeholder_text,
+    input:-moz-placeholder,
+    textarea:-moz-placeholder {
+      color: #888;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #888;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        &:focus,
+        &:active {
+            .box-shadow(#06f 0 0 7px);
+            -webkit-box-shadow: #06f 0 0 7px;
+            box-shadow: #06f 0 0 7px;
+
+            /* for Opera */
+            z-index: 1;
+        }
+    }
+
+    input[type="file"],
+    input[type="radio"],
+    input[type="checkbox"] {
+        &:focus, 
+        &:active {
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+    }
+
+    select,
+    textarea,
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"] {
+        &[disabled] {
+            background-color: #eee;
+        }
+    }
+
+    button[disabled],
+    input[disabled],
+    select[disabled],
+    select[disabled] option,
+    select[disabled] optgroup,
+    textarea[disabled] {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        color: #888;
+        cursor: default;
+    }
+
+    textarea,
+    select[size],
+    select[multiple] {
+        height: auto;
+    }
+
+    textarea {
+        min-height: 40px;
+        overflow: auto;
+        resize: vertical;
+        width: 100%;
+    }
+
+    optgroup {
+        color: #000;
+        font-style: normal;
+        font-weight: normal;
+    }
+}
+
+
+/* Success, info, notice and error/alert boxes
+-------------------------------------------------------------- */
+
+.formbox() { 
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+}
+
+.error {
+    .formbox;
+    background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; 
+    a { color: #8a1f11; }
+}
+
+.notice {
+    .formbox;
+    background: #fff6bf; color: #514721; border-color: #ffd324;
+    a { color: #514721; }
+}
+
+.success {
+    .formbox;
+    background: #e6efc2; color: #264409; border-color: #c6d880;
+    a { color: #264409; }
+}
+
+.info {
+    .formbox;
+    background: #d5edf8; color: #205791; border-color: #92cae4;
+    a { color: #205791; }
+}

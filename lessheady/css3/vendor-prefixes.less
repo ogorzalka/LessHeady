@@ -1,0 +1,129 @@
+/**
+    Columns count
+ */
+.column-count(@property : 3) {
+    -webkit-column-count: @property;
+    -moz-column-count: @property;
+    column-count: @property;
+}
+
+/**
+    Columns gap
+ */
+.gap(@property : 10) {
+    -webkit-column-gap: @property;
+    -moz-column-gap: @property;
+    column-gap: @property;
+}
+
+
+/**
+ * Easier way to use css transform
+ */
+
+.transform(@property)
+{
+	-webkit-transform:@property;
+	-moz-transform:@property;
+	transform:@property;
+}
+
+.transform-origin(@property)
+{
+	-webkit-transform-origin:@property;
+	-moz-transform-origin:@property;
+	transform-origin:@property;
+}
+
+/**
+ * Easier way to use css transition
+ */
+
+.transition(@property)
+{
+	-webkit-transition:@property;
+	-moz-transition:@property;
+	transition:@property;
+}
+
+.transition-property(@property)
+{
+	-webkit-transition-property:@property;
+	-moz-transition-property:@property;
+	transition-property:@property;
+}
+
+.transition-duration(@property)
+{
+	-webkit-transition-duration:@property;
+	-moz-transition-duration:@property;
+	transition-duration:@property;
+}
+
+.transition-timing-function(@property)
+{
+	-webkit-transition-timing-function:@property;
+	-moz-transition-timing-function:@property;
+	transition-timing-function:@property;
+}
+
+.transition-delay(@property)
+{
+	-webkit-transition-delay:@property;
+	-moz-transition-delay:@property;
+	transition-delay:@property;
+}
+
+/**
+ * Specify the size of the background image in pixels or percentage.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/en/CSS/-moz-background-size
+ */
+.background-size(@property)
+{
+	-o-background-size:@property;
+	-webkit-background-size:@property;
+	-khtml-background-size:@property;
+	-moz-background-size:@property;
+	background-size:@property;
+}
+
+/*
+    CSS resize
+*/
+.resize( @direction ) {
+    -webkit-resize: @direction;
+    -moz-resize: @direction;
+    resize: @direction;
+}
+
+
+/**
+ * Specify whether an element's background, either the color or image, extends underneath its border.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/fr/CSS/-moz-background-clip
+ */
+
+.background-clip(@property) {
+	-o-background-clip:@property;
+	-webkit-background-clip:@property;
+	-khtml-background-clip:@property;
+	-moz-background-clip:@property;
+	background-clip:@property;
+}
+
+/**
+* Opacity
+*
+* Takes a number from 0 to 1.
+
+*/
+.opacity(@opacity : 1) {
+	@ie_opacity : @opacity * 100;
+	opacity: @opacity;
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-ms-filter: %("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", @ie_opacity);
+	filter: e(%("alpha(opacity=%s)", @ie_opacity));
+}
+

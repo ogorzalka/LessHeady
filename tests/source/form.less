@@ -1,0 +1,80 @@
+/**
+ * This defines the layout. It creates mixins and constants we
+ * can use, as well as generating a png to use as a grid overlay
+ */
+@import '../../lessheady/loader';
+
+@column_width: 80px;
+@gutter_width: 10px;
+@column_count: 6;
+
+body {
+    .grid_image;
+	font-size: 11px;
+	padding: 20px 0 40px 0;
+}
+
+form {
+    .formalize;
+}
+
+a
+{
+    color: #295f78;
+    text-decoration: none;
+
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+h1 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	text-align: center;
+	color:#295f78;
+}
+
+h2 {
+	padding: @gutter_width * 2 0 0;
+	text-align: center;
+}
+
+#wrapper {
+    .container;
+    .clearfix;
+    .vertical-gradient(#1E5799, #7db9e8);
+    margin-bottom: @gutter_width * 2;
+
+    h1 {
+        color:#fff;
+        .opacity(0.5);
+    }
+        
+    p {
+        border: 1px solid #666;
+        overflow: hidden;
+        padding: @gutter_width 0;
+        text-align: center;
+        background-color:#c8c8c8;
+        margin:5px 0;
+    }
+
+   .grid_3 { .grid(3, @gutter_width); }
+
+   .grid_6 { .grid(6, @gutter_width); }
+
+   .grid_12 { .grid(12, @gutter_width); }
+
+    .grid_3,
+    .grid_6,
+    .grid_12 {
+        .rgba-bg(0, 0, 0, 0.5);
+        color:#fff;
+        .border-radius(5px);
+        border: none;
+        margin-top:@gutter_width / 2;
+        margin-bottom:@gutter_width / 2;
+    }
+}
+
