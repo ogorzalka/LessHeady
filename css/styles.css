@@ -1,0 +1,600 @@
+/**
+ * This defines the layout. It creates mixins and constants we
+ * can use, as well as generating a png to use as a grid overlay
+ */
+/**
+ * Gradients are smooth transitions between two or more specified colors.
+ * Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming.
+ * Mozilla (Firefox) supports two kinds of CSS gradients: linear and radial.
+ * @see https://developer.mozilla.org/en/CSS/-moz-linear-gradient
+ */
+/**
+    Columns count + gap
+ */
+/**
+    Box shortcut
+ */
+/**
+ * Easier way to use border-radius
+ */
+/**
+ * Adds a drop shadow
+ */
+/**
+ * Easier way to use box-shadow
+ */
+/**
+    CSS Box
+ */
+/**
+    CSS Box flex
+ */
+/**
+    Columns count
+ */
+/**
+    Columns gap
+ */
+/**
+ * Easier way to use css transform
+ */
+/**
+ * Easier way to use css transition
+ */
+/**
+ * Specify the size of the background image in pixels or percentage.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/en/CSS/-moz-background-size
+ */
+/*
+    CSS resize
+*/
+/**
+ * Specify whether an element's background, either the color or image, extends underneath its border.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/fr/CSS/-moz-background-clip
+ */
+/**
+* Opacity
+*
+* Takes a number from 0 to 1.
+
+*/
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+/* Clearing floats without extra markup
+   Based on How To Clear Floats Without Structural Markup by PiE
+   [http://www.positioniseverything.net/easyclearing.html] */
+/*
+    Formalize by Nathan Smith
+    Make things more uniform. Dress up your forms.
+    http://host.sonspring.com/formalize/
+
+    Don't forget to use the javascript files that can be found here : http://github.com/nathansmith/formalize/
+
+*/
+body {
+  background: transparent url("http://griddle.it/940-12-20") repeat-y top center !important;
+  font-size: 11px;
+  padding: 20px 0 40px 0;
+}
+form {
+  /* `Widths
+    ----------------------------------------------------------------------------------------------------*/
+
+  /*
+      Added via JS to <textarea> and class="input_full".
+      Applies only to IE7. Other browsers don't need it.
+    */
+
+  /* `UI Consistency
+    ----------------------------------------------------------------------------------------------------*/
+
+  /*
+      Separate rule for Firefox.
+      Cannot stack with WebKit's.
+    */
+
+}
+form .input_tiny {
+  width: 50px;
+}
+form .input_small {
+  width: 100px;
+}
+form .input_medium {
+  width: 150px;
+}
+form .input_large {
+  width: 200px;
+}
+form .input_xlarge {
+  width: 250px;
+}
+form .input_xxlarge {
+  width: 300px;
+}
+form .input_full {
+  width: 100%;
+}
+form .input_full_wrap {
+  display: block;
+  padding-right: 8px;
+}
+form ::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+form input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+form input,
+form button,
+form select,
+form textarea {
+  margin: 0;
+  vertical-align: middle;
+}
+form button,
+form input[type="reset"],
+form input[type="submit"],
+form input[type="button"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  -o-background-clip: padding;
+  -webkit-background-clip: padding;
+  -khtml-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding;
+  background: #ddd;
+  background: #eeeeee;
+  background-image: -moz-linear-gradient(top, #ffffff, #dddddd);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dddddd));
+  background-image: -webkit-linear-gradient(top, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(top, #ffffff, #dddddd);
+  background-image: linear-gradient(top, #ffffff, #dddddd);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dddddd)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dddddd)";
+  background-image: -ms-linear-gradient(top, #dddddd, #dddddd);
+  border: 1px solid;
+  border-color: #ddd #bbb #999;
+  cursor: pointer;
+  color: #333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+  overflow: visible;
+  padding: 3px 10px 4px;
+  text-shadow: #fff 0 1px 1px;
+  width: auto;
+  /* IE7 */
+
+  *padding-top: 2px;
+  *padding-bottom: 0px;
+}
+form button {
+  /* IE7 */
+
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+form textarea,
+form select,
+form input[type="date"],
+form input[type="datetime"],
+form input[type="datetime-local"],
+form input[type="email"],
+form input[type="month"],
+form input[type="number"],
+form input[type="password"],
+form input[type="search"],
+form input[type="tel"],
+form input[type="text"],
+form input[type="time"],
+form input[type="url"],
+form input[type="week"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-border-sizing: border-box;
+  -moz-border-sizing: border-box;
+  border-sizing: border-box;
+  -o-background-clip: padding;
+  -webkit-background-clip: padding;
+  -khtml-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: #000;
+  outline: 0;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  /* IE7 */
+
+  *padding-top: 2px;
+  *padding-bottom: 1px;
+}
+form input.placeholder_text,
+form textarea.placeholder_text,
+form input:-moz-placeholder,
+form textarea:-moz-placeholder {
+  color: #888;
+}
+form ::-webkit-input-placeholder {
+  color: #888;
+}
+form button:focus,
+form button:active,
+form input:focus,
+form input:active,
+form select:focus,
+form select:active,
+form textarea:focus,
+form textarea:active {
+  -moz-box-shadow: #0066ff 0 0 7px;
+  -webkit-box-shadow: #0066ff 0 0 7px;
+  box-shadow: #0066ff 0 0 7px;
+  -webkit-box-shadow: #06f 0 0 7px;
+  box-shadow: #06f 0 0 7px;
+  /* for Opera */
+
+  z-index: 1;
+}
+form input[type="file"]:focus,
+form input[type="file"]:active,
+form input[type="radio"]:focus,
+form input[type="radio"]:active,
+form input[type="checkbox"]:focus,
+form input[type="checkbox"]:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form select[disabled],
+form textarea[disabled],
+form input[type="date"][disabled],
+form input[type="datetime"][disabled],
+form input[type="datetime-local"][disabled],
+form input[type="email"][disabled],
+form input[type="month"][disabled],
+form input[type="number"][disabled],
+form input[type="password"][disabled],
+form input[type="search"][disabled],
+form input[type="tel"][disabled],
+form input[type="text"][disabled],
+form input[type="time"][disabled],
+form input[type="url"][disabled],
+form input[type="week"][disabled] {
+  background-color: #eee;
+}
+form button[disabled],
+form input[disabled],
+form select[disabled],
+form select[disabled] option,
+form select[disabled] optgroup,
+form textarea[disabled] {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #888;
+  cursor: default;
+}
+form textarea, form select[size], form select[multiple] {
+  height: auto;
+}
+form textarea {
+  min-height: 40px;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+form optgroup {
+  color: #000;
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  color: #295f78;
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-align: center;
+  color: #295f78;
+}
+h2 {
+  padding: 20px 0 0;
+  text-align: center;
+}
+.container_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  display: block;
+  zoom: 1;
+  background: #4e88c1;
+  background-image: -moz-linear-gradient(top, #1e5799, #7db9e8);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1e5799), to(#7db9e8));
+  background-image: -webkit-linear-gradient(top, #1e5799, #7db9e8);
+  background-image: -o-linear-gradient(top, #1e5799, #7db9e8);
+  background-image: linear-gradient(top, #1e5799, #7db9e8);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1e5799, endColorstr=#7db9e8)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1e5799, endColorstr=#7db9e8)";
+  background-image: -ms-linear-gradient(top, #7db9e8, #7db9e8);
+  margin-bottom: 20px;
+}
+.container_12:after {
+  clear: both;
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+.container_12 p {
+  border: 1px solid #666;
+  overflow: hidden;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #c8c8c8;
+  margin: 5px 0;
+}
+.container_12 .grid_1 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 60px;
+}
+.container_12 .grid_2 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 140px;
+}
+.container_12 .grid_3 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 220px;
+}
+.container_12 .grid_4 {
+  background-color: #add2e3;
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 280px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container_12 .grid_4 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.container_12 .grid_5 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 380px;
+}
+.container_12 .grid_6 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 436px;
+  background-color: #add2e3;
+  border: 2px solid #666;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container_12 .grid_6 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.container_12 .grid_7 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 540px;
+}
+.container_12 .grid_8 {
+  background-color: #add2e3;
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container_12 .grid_8 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.container_12 .grid_9 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 700px;
+}
+.container_12 .grid_10 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 780px;
+}
+.container_12 .grid_11 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 860px;
+}
+.container_12 .grid_12 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 940px;
+}
+.container_12 .prefix_1 {
+  padding-left: 80px !important;
+}
+.container_12 .prefix_2 {
+  padding-left: 160px !important;
+}
+.container_12 .prefix_3 {
+  padding-left: 240px !important;
+}
+.container_12 .prefix_4 {
+  padding-left: 320px !important;
+}
+.container_12 .prefix_5 {
+  padding-left: 400px !important;
+}
+.container_12 .prefix_6 {
+  padding-left: 480px !important;
+}
+.container_12 .prefix_7 {
+  padding-left: 560px !important;
+}
+.container_12 .prefix_8 {
+  padding-left: 640px !important;
+}
+.container_12 .prefix_9 {
+  padding-left: 720px !important;
+}
+.container_12 .prefix_10 {
+  padding-left: 800px !important;
+}
+.container_12 .prefix_11 {
+  padding-left: 880px !important;
+}
+.container_12 .suffix_1 {
+  padding-right: 80px !important;
+}
+.container_12 .suffix_2 {
+  padding-right: 160px !important;
+}
+.container_12 .suffix_3 {
+  padding-right: 240px !important;
+}
+.container_12 .suffix_4 {
+  padding-right: 320px !important;
+}
+.container_12 .suffix_5 {
+  padding-right: 400px !important;
+}
+.container_12 .suffix_6 {
+  padding-right: 480px !important;
+}
+.container_12 .suffix_7 {
+  padding-right: 560px !important;
+}
+.container_12 .suffix_8 {
+  padding-right: 640px !important;
+}
+.container_12 .suffix_9 {
+  padding-right: 720px !important;
+}
+.container_12 .suffix_10 {
+  padding-right: 800px !important;
+}
+.container_12 .suffix_11 {
+  padding-right: 880px !important;
+}
+.container_12 .alpha {
+  margin-left: 0;
+}
+.container_12 .omega {
+  margin-right: 0;
+}
+.container_12 .clearer {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.container_12 form h1 {
+  color: #fff;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.container_12 form div {
+  background: url("_rgba/rgba(0, 0, 0, 0.5)");
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container_12 form .grid_6 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 440px;
+  background: url("_rgba/rgba(0, 0, 0, 0.5)");
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.container_12 form .grid_12 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 920px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.container_12 form .grid_3 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 200px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

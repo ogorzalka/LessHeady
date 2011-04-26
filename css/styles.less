@@ -1,0 +1,195 @@
+/**
+ * This defines the layout. It creates mixins and constants we
+ * can use, as well as generating a png to use as a grid overlay
+ */
+@import 'stylesheets/import';
+
+@column_width: 60px;
+@gutter_width: 10px;
+@column_count: 12;
+
+body {
+    .grid_image;
+	font-size: 11px;
+	padding: 20px 0 40px 0;
+}
+
+form {
+    .formalize;
+}
+
+a
+{
+    color: #295f78;
+    text-decoration: none;
+
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+h1 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	text-align: center;
+	color:#295f78;
+}
+
+h2 {
+	padding: @gutter_width * 2 0 0;
+	text-align: center;
+}
+
+.container_12 {
+    .container;
+    .clearfix;
+    .vertical-gradient(#1E5799, #7db9e8);
+    margin-bottom: @gutter_width * 2;
+
+    p {
+        border: 1px solid #666;
+        overflow: hidden;
+        padding: @gutter_width 0;
+        text-align: center;
+        background-color:#c8c8c8;
+        margin:5px 0;
+    }
+
+   .grid_1 { .grid(1); }
+
+   .grid_2 { .grid(2); }
+
+   .grid_3 { .grid(3); }
+
+   .grid_4 {
+      background-color:#add2e3;
+      .grid(4, @gutter_width);
+      margin-top:@gutter_width;
+      margin-bottom:@gutter_width;
+      p {
+          margin-bottom:0;
+          margin-top:0;
+      }
+   }
+
+   .grid_5 { .grid(5); }
+
+   .grid_6 {
+      .grid(6, @gutter_width, -2px * 2);
+      background-color:#add2e3;
+      border: 2px solid #666;
+      margin-top:@gutter_width;
+      margin-bottom:@gutter_width;
+      p {
+          margin-bottom:0;
+          margin-top:0;
+      }
+   }
+
+   .grid_7 { .grid(7); }
+
+   .grid_8 {
+      background-color:#add2e3;
+      .grid(8, @gutter_width);
+      margin-top:@gutter_width;
+      margin-bottom:@gutter_width;
+
+      p {
+          margin-bottom:0;
+          margin-top:0;
+      }
+   }
+
+   .grid_9 { .grid(9); }
+
+   .grid_10 { .grid(10); }
+
+   .grid_11 { .grid(11); }
+
+   .grid_12 { .grid(12); }
+
+   .prefix_1 { .prepend(1); }
+
+   .prefix_2 { .prepend(2); }
+
+   .prefix_3 { .prepend(3); }
+
+   .prefix_4 { .prepend(4); }
+
+   .prefix_5 { .prepend(5); }
+
+   .prefix_6 { .prepend(6); }
+
+   .prefix_7 { .prepend(7); }
+
+   .prefix_8 { .prepend(8); }
+
+   .prefix_9 { .prepend(9); }
+
+   .prefix_10 { .prepend(10); }
+
+   .prefix_11 { .prepend(11); }
+
+   .suffix_1 { .append(1); }
+
+   .suffix_2 { .append(2); }
+
+   .suffix_3 { .append(3); }
+
+   .suffix_4 { .append(4); }
+
+   .suffix_5 { .append(5); }
+
+   .suffix_6 { .append(6); }
+
+   .suffix_7 { .append(7); }
+
+   .suffix_8 { .append(8); }
+
+   .suffix_9 { .append(9); }
+
+   .suffix_10 { .append(10); }
+
+   .suffix_11 { .append(11); }
+
+   .alpha { .first; }
+
+   .omega { .last; }
+
+   .clearer { .clear; }
+
+    form {
+
+        h1 {
+            color:#fff;
+            .opacity(0.5);
+        }
+
+        div {
+            .rgba-bg(0, 0, 0, 0.5);
+            color:#fff;
+            .border-radius(5px);
+        }
+
+       .grid_6 {
+          .grid(6, @gutter_width);
+          .rgba-bg(0, 0, 0, 0.5);
+          border: none;
+          margin-top:@gutter_width / 2;
+          margin-bottom:@gutter_width / 2;
+       }
+
+       .grid_12 {
+          .grid(12, @gutter_width);
+          margin-top:@gutter_width / 2;
+          margin-bottom:@gutter_width / 2;
+       }
+
+       .grid_3 {
+          .grid(3, @gutter_width);
+          margin-top:@gutter_width / 2;
+          margin-bottom:@gutter_width / 2;
+       }
+    }
+}
+

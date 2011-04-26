@@ -1,0 +1,61 @@
+//
+//   Grid.less
+// Based on 960 Grid System ~ Core CSS.
+// Learn more ~ http://960.gs/
+// Adapted by Olivier Gorzalka for brightCSS
+
+// Licensed under GPL and MIT.
+//
+
+// Containers
+// ----------------------------------------------------------------------------------------------------
+
+// layout
+@page_width: @column_width * @column_count + @column_count * @gutter_width  * 2;
+
+.grid_image() {
+    @real_page_width: @page_width - 2 * @gutter_width;
+    @real_gutter_width: 2 * @gutter_width;
+    @url: %('http://griddle.it/%s-%s-%s', @real_page_width, @column_count, @real_gutter_width);
+    background:transparent url(@url) repeat-y top center !important;
+}
+
+.container() {
+	margin-left: auto;
+	margin-right: auto;
+	width:@page_width;
+}
+
+// `Grid >> Global
+// ----------------------------------------------------------------------------------------------------
+
+// @n => grid size
+// @p => box padding
+// @m => extra margins
+.grid(@n:0, @p:0, @m:0) {
+	float: left;
+	display: inline;
+	margin-left: @gutter_width;
+	margin-right: @gutter_width;
+	padding:@p;
+	width: ( ( @n - 1 ) * @gutter_width * 2 + (@n * @column_width)) - (2 * @p) + @m;
+}
+
+// `Grid >> Children (Alpha ~ First, Omega ~ Last)
+// ----------------------------------------------------------------------------------------------------
+
+.first() { margin-left: 0; }
+
+.last() { margin-right: 0; }
+
+
+// Add these to a column to append empty cols
+.append(@n:0) {
+  padding-right: (@n * ( @column_width + @gutter_width * 2 ) ) !important;
+}
+
+// Add these to a column to prepend empty cols
+.prepend(@n:0) {
+  padding-left:  (@n * ( @column_width + @gutter_width * 2 ) ) !important;
+}
+
