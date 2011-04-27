@@ -1,4 +1,4 @@
-.formalize() {
+.formalize(@highlight_color: #06f) {
     /*
         Adaptation of Formalize by Nathan Smith
         Make things more uniform. Dress up your forms.
@@ -89,15 +89,15 @@
       text-shadow: #fff 0 1px 1px;
       width: auto;
 
-      /* IE7 */
-      *padding-top: 2px;
-      *padding-bottom: 0px;
-    }
+      &:hover {
+        .vertical-gradient(lighten(@highlight_color, 45%), lighten(@highlight_color, 25%));
+        border-color: lighten(@highlight_color, 30%) lighten(@highlight_color, 20%) lighten(@highlight_color, 10%);
+      }
 
-    button {
-      /* IE7 */
-      *padding-top: 1px;
-      *padding-bottom: 1px;
+      &:focus, &:active {
+        .vertical-gradient(lighten(@highlight_color, 35%), lighten(@highlight_color, 15%));
+        border-color: lighten(@highlight_color, 20%) lighten(@highlight_color, 10%) @highlight_color;
+      }
     }
 
     textarea,
@@ -116,7 +116,6 @@
     input[type="url"],
     input[type="week"] {
       -webkit-appearance: none;
-      .border-radius(5px);
       .box-sizing(border-box);
       .background-clip(padding);
       background-color: #fff;
@@ -125,12 +124,7 @@
       color: #000;
       outline: 0;
       padding: 2px 3px;
-      font-size: 13px;
       font-family: Arial, sans-serif;
-
-      /* IE7 */
-      *padding-top: 2px;
-      *padding-bottom: 1px;
     }
 
     /*
@@ -155,9 +149,8 @@
         &:focus,
         &:active {
             .box-shadow(#06f 0 0 7px);
-            -webkit-box-shadow: #06f 0 0 7px;
-            box-shadow: #06f 0 0 7px;
-
+            background-color:lighten(@highlight_color, 40%);
+            color:darken(@highlight_color, 25%);
             /* for Opera */
             z-index: 1;
         }
@@ -166,11 +159,9 @@
     input[type="file"],
     input[type="radio"],
     input[type="checkbox"] {
-        &:focus, 
+        &:focus,
         &:active {
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          box-shadow: none;
+          .box-shadow(none);
         }
     }
 
@@ -234,7 +225,7 @@
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */
 
-.formbox() { 
+.formbox() {
     padding: 0.8em;
     margin-bottom: 1em;
     border: 2px solid #ddd;
@@ -242,7 +233,7 @@
 
 .error {
     .formbox;
-    background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; 
+    background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4;
     a { color: #8a1f11; }
 }
 
@@ -263,3 +254,4 @@
     background: #d5edf8; color: #205791; border-color: #92cae4;
     a { color: #205791; }
 }
+
