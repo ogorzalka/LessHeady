@@ -25,19 +25,21 @@
 	height: 0;
 }
 
-/* Clearing floats without extra markup
-   Based on How To Clear Floats Without Structural Markup by PiE
-   [http://www.positioniseverything.net/easyclearing.html] */
+/* Micro clearfix by Nicolas Gallagher */
 
 .clearfix() {
-	display:block;
-	zoom:1;
-	
-	&:after {
-		clear: both;
-		content: '.';
-		display: block;
-		visibility: hidden;
-		height: 0;
-	}
+    /* For modern browsers */
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+
+    &:after {
+        clear:both;
+    }
+
+    /* For IE 6/7 (trigger hasLayout) */
+    zoom:1;
 }
+
