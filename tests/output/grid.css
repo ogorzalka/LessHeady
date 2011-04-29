@@ -2,6 +2,33 @@
  * This defines the layout. It creates mixins and constants we
  * can use, as well as generating a png to use as a grid overlay
  */
+/*
+    LessHeady : collection of useful less mixins
+    Usage : just include this file inside you less stylesheet via @import 'lessheady/loader';
+*/
+/**
+    CSS Box
+ */
+/**
+    CSS Box flex
+ */
+/**
+* Inline-block
+*
+* Workaround to make the element behave as inline-block
+*
+* @type Mixin
+*/
+/**
+ * CSS3 Multi column layout
+ * @see http://www.css3.info/preview/multi-column-layout/
+ */
+/**
+    Columns count + gap
+ */
+/**
+ * Rotate an element 90, 180 or 270 degrees
+ */
 /**
  * Gradients are smooth transitions between two or more specified colors.
  * Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming.
@@ -9,25 +36,18 @@
  * @see https://developer.mozilla.org/en/CSS/-moz-linear-gradient
  */
 /**
-    Columns count + gap
- */
-/**
     Box shortcut
  */
 /**
- * Easier way to use border-radius
- */
+    3D Text
+*/
 /**
- * Adds a drop shadow
- */
+    3D box
+*/
 /**
- * Easier way to use box-shadow
- */
-/**
-    CSS Box
- */
-/**
-    CSS Box flex
+ * Adds an ellipsis or clips the text 
+ * Options are "ellipsis" or "clip"
+ * @see http://www.css3.info/preview/text-overflow/
  */
 /**
     Columns count
@@ -63,9 +83,67 @@
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
 /* http://sonspring.com/journal/clearing-floats */
-/* Clearing floats without extra markup
-   Based on How To Clear Floats Without Structural Markup by PiE
-   [http://www.positioniseverything.net/easyclearing.html] */
+/* Micro clearfix by Nicolas Gallagher */
+/* Success, info, notice and error/alert boxes
+-------------------------------------------------------------- */
+.error {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+}
+.error a {
+  color: #8a1f11;
+}
+.notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324;
+}
+.notice a {
+  color: #514721;
+}
+.success {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880;
+}
+.success a {
+  color: #264409;
+}
+.info {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4;
+}
+.info a {
+  color: #205791;
+}
+/** 
+ * Incremental Leading 
+ *
+ * Every 4 lines of normal type, there are 5 lines of
+ * smaller type 
+ */
+/**
+ * Resets the type back to normal
+ */
+/* Surround uppercase words and abbreviations with this class.
+Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
+/* Give this to links you want to show more information */
+/* Drop Cap */
+/* For some nice Ampersands */
 body {
   background: transparent url("http://griddle.it/940-12-20") repeat-y top center !important;
   font-size: 11px;
@@ -73,7 +151,7 @@ body {
 }
 form {
   /*
-        Formalize by Nathan Smith
+        Adaptation of Formalize by Nathan Smith
         Make things more uniform. Dress up your forms.
         http://host.sonspring.com/formalize/
 
@@ -170,16 +248,40 @@ form input[type="button"] {
   padding: 3px 10px 4px;
   text-shadow: #fff 0 1px 1px;
   width: auto;
-  /* IE7 */
-
-  *padding-top: 2px;
-  *padding-bottom: 0px;
 }
-form button {
-  /* IE7 */
-
-  *padding-top: 1px;
-  *padding-bottom: 1px;
+form button:hover,
+form input[type="reset"]:hover,
+form input[type="submit"]:hover,
+form input[type="button"]:hover {
+  background: #b3d1ff;
+  background-image: -moz-linear-gradient(top, #e5f0ff, #80b3ff);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e5f0ff), to(#80b3ff));
+  background-image: -webkit-linear-gradient(top, #e5f0ff, #80b3ff);
+  background-image: -o-linear-gradient(top, #e5f0ff, #80b3ff);
+  background-image: linear-gradient(top, #e5f0ff, #80b3ff);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5f0ff, endColorstr=#80b3ff)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5f0ff, endColorstr=#80b3ff)";
+  background-image: -ms-linear-gradient(top, #80b3ff, #80b3ff);
+  border-color: #99c2ff #66a3ff #3385ff;
+}
+form button:focus,
+form input[type="reset"]:focus,
+form input[type="submit"]:focus,
+form input[type="button"]:focus,
+form button:active,
+form input[type="reset"]:active,
+form input[type="submit"]:active,
+form input[type="button"]:active {
+  background: #80b3ff;
+  background-image: -moz-linear-gradient(top, #b3d1ff, #4d94ff);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b3d1ff), to(#4d94ff));
+  background-image: -webkit-linear-gradient(top, #b3d1ff, #4d94ff);
+  background-image: -o-linear-gradient(top, #b3d1ff, #4d94ff);
+  background-image: linear-gradient(top, #b3d1ff, #4d94ff);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3d1ff, endColorstr=#4d94ff)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3d1ff, endColorstr=#4d94ff)";
+  background-image: -ms-linear-gradient(top, #4d94ff, #4d94ff);
+  border-color: #66a3ff #3385ff #0066ff;
 }
 form textarea,
 form select,
@@ -197,9 +299,6 @@ form input[type="time"],
 form input[type="url"],
 form input[type="week"] {
   -webkit-appearance: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   -webkit-border-sizing: border-box;
   -moz-border-sizing: border-box;
   border-sizing: border-box;
@@ -214,12 +313,7 @@ form input[type="week"] {
   color: #000;
   outline: 0;
   padding: 2px 3px;
-  font-size: 13px;
   font-family: Arial, sans-serif;
-  /* IE7 */
-
-  *padding-top: 2px;
-  *padding-bottom: 1px;
 }
 form input.placeholder_text,
 form textarea.placeholder_text,
@@ -231,27 +325,27 @@ form ::-webkit-input-placeholder {
   color: #888;
 }
 form button:focus,
-form button:active,
 form input:focus,
-form input:active,
 form select:focus,
-form select:active,
 form textarea:focus,
+form button:active,
+form input:active,
+form select:active,
 form textarea:active {
   -moz-box-shadow: #0066ff 0 0 7px;
   -webkit-box-shadow: #0066ff 0 0 7px;
   box-shadow: #0066ff 0 0 7px;
-  -webkit-box-shadow: #06f 0 0 7px;
-  box-shadow: #06f 0 0 7px;
+  background-color: #cce0ff;
+  color: #003380;
   /* for Opera */
 
   z-index: 1;
 }
 form input[type="file"]:focus,
-form input[type="file"]:active,
 form input[type="radio"]:focus,
-form input[type="radio"]:active,
 form input[type="checkbox"]:focus,
+form input[type="file"]:active,
+form input[type="radio"]:active,
 form input[type="checkbox"]:active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -324,7 +418,10 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
-  display: block;
+  /* For modern browsers */
+
+  /* For IE 6/7 (trigger hasLayout) */
+
   zoom: 1;
   background: #4e88c1;
   background-image: -moz-linear-gradient(top, #1e5799, #7db9e8);
@@ -337,12 +434,12 @@ h2 {
   background-image: -ms-linear-gradient(top, #7db9e8, #7db9e8);
   margin-bottom: 20px;
 }
+.container_12:before, .container_12:after {
+  content: "";
+  display: table;
+}
 .container_12:after {
   clear: both;
-  content: '.';
-  display: block;
-  visibility: hidden;
-  height: 0;
 }
 .container_12 p {
   border: 1px solid #666;
