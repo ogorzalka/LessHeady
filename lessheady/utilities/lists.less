@@ -46,3 +46,22 @@
 		.no-bullet;
 	}
 }
+
+.centered-list() {
+	width:100%;
+	overflow:hidden;
+	.clearfix;
+	ul {
+		margin:0 auto;
+		list-style-type:none;
+		float:left;
+		position:relative;
+		left:50%;
+		
+		li {
+		  float:left;
+		  position:relative;
+		  right:50%;
+		}
+	}
+}

@@ -11,9 +11,9 @@
 // ----------------------------------------------------------------------------------------------------
 
 // layout
-@page_width: @column_width * @column_count + @column_count * @gutter_width  * 2;
 
 .grid_image() {
+    @page_width: @column_width * @column_count + @column_count * @gutter_width  * 2;
     @real_page_width: @page_width - 2 * @gutter_width;
     @real_gutter_width: 2 * @gutter_width;
     @url: %('http://griddle.it/%s-%s-%s', @real_page_width, @column_count, @real_gutter_width);
@@ -21,6 +21,7 @@
 }
 
 .container() {
+    @page_width: @column_width * @column_count + @column_count * @gutter_width  * 2;
 	margin-left: auto;
 	margin-right: auto;
 	width:@page_width;
