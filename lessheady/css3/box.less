@@ -1,23 +1,13 @@
-// Adds a drop shadow
+//
+// Easier way to use box properties
+//
+
 .box-shadow(@properties)
 {
 	-moz-box-shadow:@properties;
 	-webkit-box-shadow:@properties;
 	box-shadow:@properties;
 }
-
-
-// Easier way to use box-sizing
-.box-sizing(@property)
-{
-	-webkit-border-sizing:@property;
-	-moz-border-sizing:@property;
-	border-sizing:@property;
-}
-
-/**
-    CSS Box
- */
 
 .box-pack(@property : center) {
     -webkit-box-pack: @property;
@@ -37,11 +27,21 @@
     box-align: @property;
 }
 
-/**
-    CSS Box flex
- */
-.flex( @property : 1 ) {
+.box-flex( @property : 1 ) {
     -webkit-box-flex: @property;
     -moz-box-flex: @property;
     box-flex: @property;
+}
+
+.box-sizing(@property)
+{
+	-webkit-border-sizing:@property;
+	-moz-border-sizing:@property;
+	border-sizing:@property;
+}
+
+.resize( @direction ) {
+    -webkit-resize: @direction;
+    -moz-resize: @direction;
+    resize: @direction;
 }

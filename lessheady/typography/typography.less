@@ -1,122 +1,337 @@
-.init-typography(@default_color: #000, @titlecolor:#111111, @link: #676666, @hover: #e95c2b, @preformatted: #666) {
-    /* --------------------------------------------------------------
+.init-typography() {
+
+    /*
+
+    ____________________________________________________
+
+    Typography presets
+
+    Author: Andy Clarke
+    Version: 0.9b
+    URL: http://stuffandnonsense.co.uk/projects/320andup/
+    License: http://creativecommons.org/licenses/MIT/
+    _____________________________________________________
+
+    */
     
-       typography.css
-       * Sets up some sensible default typography.
-    
-    -------------------------------------------------------------- */
+    .init-reset;
     
     /* Default font settings.
        The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-    html { font-size:100.01%; }
-    body {
-      font-size: 75%;
-      color: #222;
-      background: #fff;
-      color: @default_color;
-      font-family: Arial, Helvetica, sans-serif;
+    html { font-size:100.01%; overflow-y : scroll; }
+
+    body { 
+        margin : 0 auto;
+        padding : 24px 0;
+        width : 90%;  /* 252px */
+        font : 100%/1.4 Cambria, Georgia, Times, "Times New Roman";
+        color : rgb(40,40,40); 
+        background-color : transparent;
+        -webkit-text-size-adjust : 100%; 
+        -ms-text-size-adjust : 100%;
     }
-    
-    
-    /* Headings
-    -------------------------------------------------------------- */
-    
-    h1,h2,h3,h4,h5,h6 { font-weight: normal; color: @titlecolor; }
-    
-    h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-    h2 { font-size: 2em; margin-bottom: 0.75em; }
-    h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
-    h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
-    h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
-    h6 { font-size: 1em; font-weight: bold; }
-    
+
+    /* HEADINGS */
+
     h1, h2, h3, h4, h5, h6 {
-    	img {
-    		margin: 0;
-    	}
+        font-family : "Helvetica Neue", Helvetica, Arial;
+        font-weight : bold;
+    }
+
+    h1 { 
+        margin-bottom : .75em;
+        font-size : 3em; /* 48 / 16 = 3 */
+        line-height : 1.2;
+    }
+
+    h2 { 
+        margin-bottom : .75em;
+        font-size : 2em; /* 36 / 16 = 2 */
+        line-height : 1.2;
+    }
+
+    h3 { 
+        margin-bottom : 1em;
+        font-size : 1.5em; /* 24 / 16 = 1.5 */
+        line-height : 1.3;
+    }
+
+    h4 { 
+        margin-bottom : 1.25em;
+        font-size : 1.25em; /* 20 / 16 = 1.25 */
+        line-height : 1.25;
+    }
+
+    h5 { 
+        margin-bottom : 1.5em;
+        font-size : 1em; /* 16 / 16 = 1 */
+    }
+
+    h6 { 
+        font-size : 1em; /* 16 / 16 = 1 */
     }
     
-    
-    /* Text elements
-    -------------------------------------------------------------- */
-    
-    p           { margin: 0 0 1.5em; }
-    
-    a:focus,
-    a:hover     { color: @hover; }
-    a           { color: @link; text-decoration: underline; }
-    
-    blockquote  { margin: 1.5em; color: #666; font-style: italic; }
-    strong,dfn	{ font-weight: bold; }
-    em,dfn      { font-style: italic; }
-    sup, sub    { line-height: 0; }
-    
-    abbr,
-    acronym     { border-bottom: 1px dotted @preformatted; }
-    address     { margin: 0 0 1.5em; font-style: italic; }
-    del         { color:@preformatted; }
-    
-    pre         { margin: 1.5em 0; white-space: pre; }
-    pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
-    
-    
-    /* Lists
-    -------------------------------------------------------------- */
-    
-    li ul,
-    li ol       { margin: 0; }
-    ul, ol      { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
-    
-    ul          { list-style-type: disc; }
-    ol          { list-style-type: decimal; }
-    
-    dl          { margin: 0 0 1.5em 0; }
-    dl dt       { font-weight: bold; }
-    dd          { margin-left: 1.5em;}
-    
-    
-    /* Tables
-    -------------------------------------------------------------- */
-    
-    /* 
-    	Because of the need for padding on TH and TD, the vertical rhythm 
-    	on table cells has to be 27px, instead of the standard 18px or 36px 
-    	of other elements. 
-     */ 
-    table       { margin-bottom: 1.4em; width:100%; }
-    th          { font-weight: bold; }
-    thead th    { background: #c3d9ff; }
-    th,td,caption { padding: 5px; }
-    /*
-    	You can zebra-stripe your tables in outdated browsers by adding 
-    	the class "even" to every other table row. 
-     */
-    tbody tr:nth-child(even) td, 
-    tbody tr.even td  { 
-    	background: #e5ecf9; 
+    hr { 
+        display : block; 
+        height : 1px; 
+        border : 0; 
+        border-top : 1px solid rgb(204,204,204);
+        margin : 1em 0; 
+        padding : 0;
     }
-    tfoot       { font-style: italic; }
-    caption     { background: #eee; }
+
+    /* TYPOGRAPHY */
+
+    p, 
+    ol, 
+    ul, 
+    dl, 
+    address { 
+        margin-bottom : 1.5em; 
+        font-size : 1em; /* 16 / 16 = 1 */
+    }
+
+    ul, 
+    ol { 
+        margin : 0 0 1.5em -24px; 
+        padding-left : 24px;
+    }
+
+    ul { 
+        list-style-type : disc;
+    }
+
+    ol { 
+        list-style-type : decimal;
+    }
+
+    li ul, 
+    li ol { 
+        margin : 0;
+        font-size : 1em; /* 16 / 16 = 1 */
+    }
+
+    dl, 
+    dd { 
+        margin-bottom : 1.5em;
+    }
+
+    dt { 
+        font-weight : normal;
+    }
+
+    blockquote  { 
+        margin : 0 0 1.5em -24px; 
+        padding-left : 24px; 
+        border-left : 1px solid rgb(200,200,200);
+        font-style : italic;
+    }
+
+    blockquote:before, 
+    blockquote:after, 
+    q:before, 
+    q:after {
+        content : '';
+        content : none;
+    }
+
+    b, 
+    strong	{ 
+        font-weight : bold;
+    }
+
+    i, 
+    em { 
+        font-style : italic;
+    }
+
+    sup, 
+    sub { 
+        position : relative;
+        font-size : 75%; 
+        line-height : 0;
+    }
+
+    sup { 
+        top : -.5em;
+    }
+
+    sub { 
+        bottom : -.25em;
+    }
+
+    address { 
+        font-style : normal;
+    }
+
+    pre { 
+        margin-bottom : 1.5em; 
+        white-space : pre; 
+        white-space : pre-wrap; 
+        word-wrap : break-word;
+    }
+
+    pre, 
+    code { 
+        font : .875em 'andale mono', 'lucida console', monospace; 
+        line-height : 1.5;
+    }
+
+    small {
+        font-size : 1em; /* 16 / 16 = 1 */
+    }
+
+    /* LINKS */
+
+    a, 
+    a:visited {
+        outline : none;
+        color : rgb(23,119,175);
+        text-decoration : none;
+    }
+     
+    a:hover { 
+        outline : none;
+        color : rgb(40,40,40); 
+        text-decoration : underline; 
+    }
+     
+    a:active, 
+    a:focus { 
+        outline : none;
+        color : rgb(0,0,0);
+    }
+    
+    a:link { 
+    -webkit-tap-highlight-color : rgb(52,158,219); }
+
+    /* FIGURES & IMAGES */
+
+    figure {
+        margin-bottom : 1.5em;
+    }
+
+    figure img,
+    figure object,
+    figure embed {
+        margin-bottom : .75em;
+        max-width : 100%;
+    }
+
+    figcaption {
+        display : block;
+        font-weight : normal;
+    }
+
+    /* TABLES */
+
+    table { 
+        border-collapse : collapse;
+        border-spacing : 0;
+        margin-bottom : 1.4em; 
+        width : 100%;
+        font-size : .875em; /* 14 / 16 = .875 */
+    }
+
+    th { 
+        font-weight : bold;
+    }
+
+    th, td, caption { 
+        padding : .25em 10px .25em 5px;
+    }
+
+    tfoot { 
+        font-style : italic;
+    }
+
+    caption { 
+        background-color : transparent;
+    }
+    
+    /* VENDOR-SPECIFIC */
+    
+    ::-webkit-selection { 
+        background : rgb(23,119,175); 
+        color : rgb(250,250,250); 
+        text-shadow : none; }
+
+    ::-moz-selection { 
+        background : rgb(23,119,175); 
+        color : rgb(250,250,250); 
+        text-shadow : none; }
+
+    ::selection { 
+        background : rgb(23,119,175); 
+        color : rgb(250,250,250); 
+        text-shadow : none; }
+
+    input[type=search] {
+        -webkit-appearance : none;
+    }
+
+    input[type="search"]::-webkit-search-decoration, 
+    input[type="search"]::-webkit-search-cancel-button {
+        display : none;
+    }
+
+    ::-webkit-input-placeholder {
+        padding : 10px;
+        font-size : .875em; 
+        line-height : 1.4;
+    }
+
+    input:-moz-placeholder { 
+        padding : 10px;
+        font-size : .875em; 
+        line-height : 1.4;
+    }
+
+    .ie7 img,
+    .iem7 img { 
+        -ms-interpolation-mode : bicubic;
+    }
+
+    div,
+    input,
+    textarea  { 
+        -webkit-box-sizing : border-box;
+        -moz-box-sizing : border-box;
+        -o-box-sizing : border-box;
+        box-sizing : border-box;
+    }
+
 }
+
 
 
 // 
 // These can be used to pull an image at the start of a paragraph, so 
-// that the text flows around it (usage: <p><img class="left">Text</p>) 
+// that the text flows around it 
 // 
-.p-left()  			{ float: left; }
-    .img-left()			{ margin: 1.5em 1.5em 1.5em 0; padding: 0; }
-    
-.p-right()			{ float: right; }
-   .img-right()		{ margin: 1.5em 0 1.5em 1.5em; padding: 0; }
+.align-left()	{
+	float: left;
+	margin: 5px 20px 15px 0;
+}
+.align-right()	{
+	float: left;
+	margin: 5px 0 15px 20px;
+	
+	&:first-child {
+		margin-top:0;
+	}
+}
+
+.pretty_image(@size: 1) {
+	background-color:#fff;
+	padding:@size * 5px;
+	border:1px solid #ddd;
+}
     
 // Misc classes
-    
-.small()      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
-.large()      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
 
-.quiet()      { color: @preformatted; }
-.loud()       { color: @default_color; }
+.quiet()      { color: #666; }
+.loud()       { color: #3b3b3b; }
 .highlight()  { background:#ff0; }
 .added()      { background:#060; color: #fff; }
 .removed()    { background:#900; color: #fff; }

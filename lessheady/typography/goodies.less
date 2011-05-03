@@ -1,12 +1,4 @@
-/** 
- * Incremental Leading 
- *
- * Every 4 lines of normal type, there are 5 lines of
- * smaller type 
- */
-/**
- * Resets the type back to normal
- */
+//
 .regular()
 {
 	font-weight:normal;
@@ -14,8 +6,8 @@
 }
 
 
-/* Surround uppercase words and abbreviations with this class.
-Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
+// Surround uppercase words and abbreviations with this class.
+// Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/]
 .all-caps()
 { 
 	font-variant: small-caps; 
@@ -28,24 +20,24 @@ Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
 }
 
 
-/* Give this to links you want to show more information */
+// Give this to links you want to show more information
 .link-info()
 {
-	[href^="http"]:after
+	&[href^="http"]:after
 	{
 		margin:0 5px 0 0; font-family:"Zapf Dingbats"; content: "\279C";
 	}
 	
-	[href$="pdf"]:after	{ content: " (pdf)"; }  
-	[href$=".doc"]:after	{ content: " (doc)"; } 
-	[href$=".zip"]:after	{ content: " (zip)"; } 
+	&[href$="pdf"]:after	{ content: " (pdf)"; }  
+	&[href$=".doc"]:after	{ content: " (doc)"; } 
+	&[href$=".zip"]:after	{ content: " (zip)"; } 
 }
 
 
-/* Drop Cap */
+// Drop Cap
 .drop-cap()
 {  
-	:first-letter
+	&:first-letter
 	{
 		.baskerville;
 		
@@ -56,10 +48,75 @@ Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
 	}
 }
 
-/* For some nice Ampersands */
+// For some nice Ampersands
 .nice-amp()
 { 
   .warnock; 
   font-style: italic;
   font-weight: normal;
+}
+
+
+// align text with floating element 
+.fix-text-block() {
+    overflow:hidden;
+    zoom:1;
+}
+
+// beautify the hr !
+.sexy-line() {
+    display : list-item;
+    list-style:none;
+    margin: 25px 0;
+    height: 1px;
+    margin : 1em 0;
+    border:0;
+    clear:both;
+    background: black;
+    background: #FFF9F9; /* old browsers */
+    background: -moz-linear-gradient(left, rgba(127,127,127,0) 0%, rgba(127,127,127,1) 50%, rgba(127,127,127,0) 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(127,127,127,0)), color-stop(50%,rgba(127,127,127,1)), color-stop(100%,rgba(127,127,127,0))); /* webkit */
+    background: -o-linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 50%,rgba(127,127,127,0) 100%); /* opera */
+}
+
+// make a full css ribbon
+.ribbon(@bgcolor:#5C5C5C, @txtcolor:#fff) {
+    text-align: center;
+    position: relative;
+    color: @txtcolor;
+    margin: 0 -10px 30px -10px;
+    padding: 10px 0;
+    text-shadow: 0 1px rgba(0,0,0,.8);
+    background: @bgcolor;
+    background-image: -moz-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: -webkit-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image:  linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    -moz-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+
+    &:before, &:after
+    {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-color: transparent;
+        bottom: -10px;
+    }
+
+    &:before
+    {
+        border-width: 0 10px 10px 0;
+        border-right-color: darken(@bgcolor, 22%);
+        left: 0;
+    }
+
+    &:after
+    {
+        border-width: 0 0 10px 10px;
+        border-left-color: darken(@bgcolor, 22%);
+        right: 0;
+    }
 }

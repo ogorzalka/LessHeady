@@ -1,11 +1,9 @@
-/**
- * CSS3 Multi column layout
- * @see http://www.css3.info/preview/multi-column-layout/
- */
+//
+// CSS3 Multi column layout
+// @see http://www.css3.info/preview/multi-column-layout/
+//
  
-/**
-    Columns count + gap
- */
+// Columns count + gap
 .columns(@count : 3, @gap : 10) {
     .column-count(@count);
     .column-gap(@gap);
@@ -18,7 +16,7 @@
 	column-width:@width;
 }
 
-.column-count(@count)
+.column-count(@count: 3)
 {
 	-moz-column-count:@count;
 	-webkit-column-count:@count;
@@ -60,7 +58,7 @@
 	column-rule-style:@rulestyle;
 }
 
-.column-gap(@gap)
+.column-gap(@gap: 10)
 {
 	-moz-column-gap:@gap;
 	-webkit-column-gap:@gap;

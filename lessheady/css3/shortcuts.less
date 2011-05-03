@@ -1,9 +1,9 @@
-/**
- * Gradients are smooth transitions between two or more specified colors.
- * Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming.
- * Mozilla (Firefox) supports two kinds of CSS gradients: linear and radial.
- * @see https://developer.mozilla.org/en/CSS/-moz-linear-gradient
- */
+///
+ // Gradients are smooth transitions between two or more specified colors.
+ // Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming.
+ // Mozilla (Firefox) supports two kinds of CSS gradients: linear and radial.
+ // @see https://developer.mozilla.org/en/CSS/-moz-linear-gradient
+ //
 .horizontal-gradient(@start: #000, @end: #ffffff) {
     background: (@start + @end) / 2; // Non CSS3 browsers get the average color
     background-image: -moz-linear-gradient(left,  @start, @end); // FF 3.6
@@ -28,12 +28,12 @@
     background-image: -ms-linear-gradient(top, @end, @end); // IE10
 }
 
+// easy way to use transition
+.animate(@property: all, @duration: 0.25s, @animation-type: ease-in) {
+    .transition(@property @duration @animation-type);
+}
 
-
-
-/**
-    Box shortcut
- */
+// Box shortcut
 .box(@orient : horizontal, @pack : center, @align : center) {
     display: -webkit-box;
     display: -moz-box;
@@ -43,37 +43,72 @@
     .box-align(@align);
 }
 
-/**
-    3D Text
-*/
+//3D Text
 .3d-text(@color: #000, @bottom: 1, @right: 1) {
     text-shadow:1px * @right 1px * @bottom 0px @color,
-                1.5px * @right 1.5px * @bottom 0px lighten(@color, 1%),
-                2px * @right 2px 0px * @bottom lighten(@color, 2%),
-                2.5px * @right 2.5px * @bottom 0px lighten(@color, 3%),
-                3px * @right 3px * @bottom 0px lighten(@color, 4%),
-                3.5px * @right 3.5px * @bottom 0px lighten(@color, 5%),
-                4px * @right 4px * @bottom 0px lighten(@color, 6%),
-                4.5px * @right 4.5px * @bottom 0px lighten(@color, 7%),
-                5px * @right 5px * @bottom 0px lighten(@color, 8%),
-                5.5px * @right 5.5px * @bottom 0px lighten(@color, 9%),
-                6px * @right 6px * @bottom 0px lighten(@color, 10%);
+                1.5px * @right 1.5px * @bottom 0px lighten(@color, 0.5%),
+                2px * @right 2px 0px * @bottom lighten(@color, 1%),
+                2.5px * @right 2.5px * @bottom 0px lighten(@color, 1.5%),
+                3px * @right 3px * @bottom 0px lighten(@color, 2%),
+                3.5px * @right 3.5px * @bottom 0px lighten(@color, 2.5%),
+                4px * @right 4px * @bottom 0px lighten(@color, 3%),
+                4.5px * @right 4.5px * @bottom 0px lighten(@color, 3.5%),
+                5px * @right 5px * @bottom 0px lighten(@color, 4%),
+                5.5px * @right 5.5px * @bottom 0px lighten(@color, 4.5%),
+                6px * @right 6px * @bottom 0px lighten(@color, 5%);
 }
 
-/**
-    3D box
-*/
+// 3D box
 .3d-box(@color: #000, @bottom: 1, @right: 1) {
     box-shadow:1px * @right 1px * @bottom 0px @color,
-                1.5px * @right 1.5px * @bottom 0px lighten(@color, 1%),
-                2px * @right 2px 0px * @bottom lighten(@color, 2%),
-                2.5px * @right 2.5px * @bottom 0px lighten(@color, 3%),
-                3px * @right 3px * @bottom 0px lighten(@color, 4%),
-                3.5px * @right 3.5px * @bottom 0px lighten(@color, 5%),
-                4px * @right 4px * @bottom 0px lighten(@color, 6%),
-                4.5px * @right 4.5px * @bottom 0px lighten(@color, 7%),
-                5px * @right 5px * @bottom 0px lighten(@color, 8%),
-                5.5px * @right 5.5px * @bottom 0px lighten(@color, 9%),
-                6px * @right 6px * @bottom 0px lighten(@color, 10%);
+                1.5px * @right 1.5px * @bottom 0px lighten(@color, 0.5%),
+                2px * @right 2px 0px * @bottom lighten(@color, 1%),
+                2.5px * @right 2.5px * @bottom 0px lighten(@color, 1.5%),
+                3px * @right 3px * @bottom 0px lighten(@color, 2%),
+                3.5px * @right 3.5px * @bottom 0px lighten(@color, 2.5%),
+                4px * @right 4px * @bottom 0px lighten(@color, 3%),
+                4.5px * @right 4.5px * @bottom 0px lighten(@color, 3.5%),
+                5px * @right 5px * @bottom 0px lighten(@color, 4%),
+                5.5px * @right 5.5px * @bottom 0px lighten(@color, 4.5%),
+                6px * @right 6px * @bottom 0px lighten(@color, 5%);
 }
 
+// experimental : make a realistic drop shadow
+.drop-shadow(@bgcolor:#ffffff, @z-index:3) {
+	position:relative;
+	background:@bgcolor;
+    .box-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+
+	&:after{
+		.box-shadow(8px 12px 10px rgba(0, 0, 0, 0.7));
+	    position:absolute;
+		content:'';
+		background:transparent;
+		bottom:11px;
+		right:10px;
+		width:70%;
+		height:70%;
+	    -webkit-transform: rotate(5deg)
+						   skew(10deg);
+		-moz-transform: rotate(5deg)
+						skew(10deg);
+		.border-bottom-right-radius(36px 12px);
+		z-index:-2;
+	}
+	
+    &:before{
+        .box-shadow(11px 11px 32px rgba(255, 255, 255, 0.7));
+        position:absolute;
+        content:'';
+        background:transparent;
+        bottom:46px;
+        right:41px;
+        width:50%;
+        height:50%;
+        -webkit-transform: rotate(20deg)
+                           skew(45deg);
+        -moz-transform: rotate(20deg)
+                        skew(45deg);
+        z-index:-1;
+    }
+}

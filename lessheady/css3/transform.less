@@ -1,0 +1,72 @@
+//
+// Easier way to use css transform
+//
+
+.transform (@value: scale(1))
+{
+    -webkit-transform : @value;
+    -moz-transform : @value;
+    -o-transform : @value;
+    transform : @value;
+}
+
+.transform-origin(@property)
+{
+	-webkit-transform-origin:@property;
+	-moz-transform-origin:@property;
+	transform-origin:@property;
+}
+
+.translate(@x:0, @y:0)
+{
+	.transform(translate(@x, @y));
+}
+
+.translateX(@x:0)
+{
+    .transform(translateX(@x));
+}
+
+.translateY(@y:0)
+{
+    .transform(translateY(@y));
+}
+
+.scale(@x:1, @y:1)
+{
+	.transform(scale(@x, @y));
+}
+
+.scaleX(@x:1)
+{
+	.transform(scaleX(@x, @y));
+}
+
+.scaleY(@y:1)
+{
+	.transform(scaleY(@x, @y));
+}
+
+.skew(@angle-x: 35deg, @angle-y: 0deg)
+{
+    .transform(skew(@angle-x, @angle-y));
+}
+
+.skewX(@angle-x: 35deg)
+{
+    .transform(skewX(@angle-x));
+}
+
+.skewY(@angle-y: 35deg)
+{
+    .transform(skewY(@angle-y));
+}
+
+.rotate(@angle: 90deg)
+{
+    .transform(rotate(@angle));
+}
+
+.matrix(@a:1, @b:0, @c:0, @d:1, @e:0, @f:0) {
+    .transform(matrix(@a, @b, @c, @d, @e, @f));
+}

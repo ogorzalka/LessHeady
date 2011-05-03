@@ -1,24 +1,11 @@
-.tabs()
+// easily create tabs (inspired by a blueprint plugin)
+.tabs(@bgcolor: #ccc, @text:#222, @activebgcolor: #666, @activetext: #fff)
 { 
-    /**
-    * ========================================================
-    * Tabs
-    *
-    * Tabs Plugin 0.1 for the Blueprint CSS Framework
-    *
-    * @section Tabs
-    * @see http://blueprintcss.org
-    * @since 1.0
-    * --------------------------------------------------------
-    */
-	border-bottom:1px solid #ccc;
-	margin:0;
-	min-height:auto;
-	overflow:auto;
-	
 	li 
 	{
-	  	border:1px solid #ccc;
+	    .border-top-left-radius(0.3em);
+	    .border-top-right-radius(0.3em);
+	  	border:1px solid @bgcolor;
 	  	border-bottom:none;
 	  	float:left;
 	  	line-height:1.5; 
@@ -28,45 +15,46 @@
 	  
 	  	a 
 		{ 
-			background:#ddd;
-		  	border:1px solid #eee;
+	        .border-top-left-radius(0.2em);
+	        .border-top-right-radius(0.2em);
+			.vertical-gradient(@bgcolor, darken(@bgcolor, 10%));
+		  	border:1px solid darken(@bgcolor, 20%);
 		  	border-bottom:none;
-		  	color:#222;
+		  	color:@text;
 		  	cursor:pointer;
 		 	display:block;
-		  	float:left;
 		  	font-weight:bold;
 		  	padding:.15em .33em .25em .33em;
-		}
-		
-		a.selected 
-		{ 
-		  	background:#666;
-		 	border:1px solid #666;
-		  	border-bottom:none;
-		  	color:#fff;
-		  	cursor:default;
-		}
-		
-		a, 
-		a:focus, 
-		a:hover 	{ text-decoration:none; }
-		
-		a:focus, 
-		a:hover 	{ color:#555; outline:none; }
-		
-		a.selected:focus, 
-		a.selected:hover { color:#fafafa; }
-		
-	}
-	
-	li.label 
-	{ 
-		border:none;
-		font-weight:bold;
-		line-height:1.5; 
-		margin-right:.5em; 
-		padding:.25em .33em .25em .33em;
-	}
-	
+		  	text-decoration:none;
+		  	
+		    &:focus, 
+		    &:hover {
+		        text-decoration:none;
+		        color:darken(@text, 10%); 
+		        outline:none;
+		    }
+		}	
+		    
+        &.active { 
+          	a {
+              	.vertical-gradient(@activebgcolor, darken(@activebgcolor, 10%));
+             	border:1px solid darken(@activebgcolor, 20%);
+              	border-bottom:none;
+              	color:@activetext;
+              	cursor:default;
+              	
+              	&:focus, 
+                &:hover { color:darken(@activetext, 10%); }
+            }
+        }
+    
+	    &.label 
+	    { 
+		    border:none;
+		    font-weight:bold;
+		    line-height:1.5; 
+		    margin-right:.5em; 
+		    padding:.25em .33em .25em .33em;
+	    }	
+	}	
 }

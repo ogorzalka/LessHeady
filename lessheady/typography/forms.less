@@ -1,56 +1,32 @@
-.formalize(@highlight_color: #06f) {
+.init-forms(@highlight_color: #06f) {
+
     /*
         Adaptation of Formalize by Nathan Smith
         Make things more uniform. Dress up your forms.
         http://host.sonspring.com/formalize/
 
-        Don't forget to use the javascript files that can be found here : http://github.com/nathansmith/formalize/
-
-    */
-
-
-    /* `Widths
+        `UI Consistency
     ----------------------------------------------------------------------------------------------------*/
 
-    .input_tiny {
-      width: 50px;
+    form { 
+        margin-bottom : 1.5em;
     }
 
-    .input_small {
-      width: 100px;
+    fieldset { 
+        margin : 0 0 1.5em 0; 
+        padding : 0; 
+        border-width : 0;
     }
 
-    .input_medium {
-      width: 150px;
+    legend { 
+        margin-top : -.2em 0 1em 0; 
+        font-weight : bold; 
+        font-size : 1.2em;
     }
 
-    .input_large {
-      width: 200px;
+    label { 
+        font-weight : normal;
     }
-
-    .input_xlarge {
-      width: 250px;
-    }
-
-    .input_xxlarge {
-      width: 300px;
-    }
-
-    .input_full {
-      width: 100%;
-    }
-
-    /*
-      Added via JS to <textarea> and class="input_full".
-      Applies only to IE7. Other browsers don't need it.
-    */
-    .input_full_wrap {
-      display: block;
-      padding-right: 8px;
-    }
-
-    /* `UI Consistency
-    ----------------------------------------------------------------------------------------------------*/
 
     ::-moz-focus-inner {
       border: 0;
@@ -68,6 +44,14 @@
       margin: 0;
       vertical-align: middle;
     }
+    
+    label,
+    input[type="button"], 
+    input[type="submit"], 
+    input[type="image"], 
+    button { 
+        cursor : pointer;
+    }
 
     button,
     input[type="reset"],
@@ -80,7 +64,6 @@
       .vertical-gradient(#fff, #ddd);
       border: 1px solid;
       border-color: #ddd #bbb #999;
-      cursor: pointer;
       color: #333;
       font: bold 12px/1.2 Arial, sans-serif;
       outline: 0;
@@ -125,6 +108,13 @@
       outline: 0;
       padding: 2px 3px;
       font-family: Arial, sans-serif;
+    }
+
+    /* Colors for form validity */
+    input:invalid, 
+    textarea:invalid {
+        .box-shadow(0 0 2px rgb(255,0,0)); 
+        background-color : rgb(240,221,221); 
     }
 
     /*
@@ -230,6 +220,37 @@
     margin-bottom: 1em;
     border: 2px solid #ddd;
 }
+
+// Input Widths
+
+.input_tiny() {
+  width: 50px;
+}
+
+.input_small() {
+  width: 100px;
+}
+
+.input_medium() {
+  width: 150px;
+}
+
+.input_large() {
+  width: 200px;
+}
+
+.input_xlarge() {
+  width: 250px;
+}
+
+.input_xxlarge() {
+  width: 300px;
+}
+
+.input_full() {
+  width: 100%;
+}
+
 
 .error {
     .formbox;

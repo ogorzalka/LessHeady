@@ -1,13 +1,9 @@
+//
+// Horizontal List
+// Turns a ul into a horizontal list, ready to be used as a menu.
+//
 .horizontal-list()
 {
-    /**
-    * Horizontal List
-    *
-    * Turns a ul into a horizontal list, ready to be used as 
-    * a menu.
-    *
-    * @type Mixin
-    */
 	.reset;
   	.clearfix;
 	
@@ -19,30 +15,48 @@
 	}
 }
 
+//
+// No Bullet
+// Removes the bullet from the list element
+//
 .no-bullet()
 {
-    /**
-    * No Bullet
-    *
-    * Removes the bullet from the list element
-    *
-    * @type Mixin
-    */
 	list-style-type:none;
 	margin-left:0;
 }
 
+//
+// No bullets
+// Turns off bullets for the entire ul
+//
 .no-bullets()
 {
-    /**
-    * No bullets
-    *
-    * Turns off bullets for the entire ul
-    *
-    * @type Mixin
-    */
 	li
 	{
 		.no-bullet;
+	}
+}
+
+//
+// Centered list
+// Make li centered inside the ul
+// (require a container that wraps the ul)
+//
+.centered-list() {
+	width:100%;
+	overflow:hidden;
+	.clearfix;
+	ul {
+		margin:0 auto;
+		list-style-type:none;
+		float:left;
+		position:relative;
+		left:50%;
+		
+		li {
+		  float:left;
+		  position:relative;
+		  right:50%;
+		}
 	}
 }

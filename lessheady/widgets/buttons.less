@@ -1,47 +1,78 @@
-.button() 
-{
-    /**
-    * ========================================================
-    * Buttons
-    *
-    * Created by Kevin Hale [particletree.com]
-    *
-    * @section Buttons
-    * @see particletree.com/features/rediscovering-the-button-element
-    * @since 1.0
-    * --------------------------------------------------------
-    */
+//
+// Action Button
+// Create a call-to-action button
+//
+
+.action-btn(@bgcolor: #ff7C00, @txtcolor: #ffffff, @bgcolor_hover: #1657B1, @txtcolor_hover: #ffffff) {
+    background: @bgcolor; /* old browsers */
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 51%, rgba(0,0,0,0.1) 100%); /* firefox */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(50%,rgba(255,255,255,0.3)), color-stop(51%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1))); /* webkit */
+    background-image: -o-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 51%,rgba(0,0,0,0.1) 100%); /* opera */
+    
+    .border-radius(0.2em);
+    box-shadow:0 0 0 2px rgba(255, 255, 255, 0.2) inset,
+               0 -21px 0 rgba(0, 0, 0, 0.05) inset,
+               0 0 15px rgba(0, 0, 0, 0.3) inset,
+               0 3px 2px -2px rgba(0, 0, 0, 0.5);
+
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2em;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+    padding: 0 30px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    vertical-align: top;
+    .animate;
+    
+    &:hover {
+        background-color: @bgcolor_hover; /* old browsers */
+        box-shadow:0 0 0 2px rgba(255, 255, 255, 0.2) inset,
+                   0 -21px 0 rgba(0, 0, 0, 0.05) inset,
+                   0 0 15px rgba(0, 0, 0, 0.3) inset,
+                   0 3px 2px -2px rgba(0, 0, 0, 0.5),
+                   0 0 8px rgba(255,255,255,0.5);
+    }
+}
+
+
+//
+// Buttons
+// Created by Kevin Hale [particletree.com]
+// @see particletree.com/features/rediscovering-the-button-element
+//
+
+.button(@bgcolor:#f5f5f5, @text:#565656, @bgcolor_hover: #dff4ff, @text_hover: #336699) {
 	display:block;
 	float:left;
 	margin:0 0.583em 0.667em 0;
 	width:auto;
 	overflow:visible;
 	padding:4px 10px 4px 7px;
-	
-	/**
-	* Buttons have trouble with line-heights
-	* @bugfix
-	* @affected IE
-	* @valid yes
-	*/
-	line-height:!baseline;
-	
-	border:1px solid #dedede;
-	border-top:1px solid #eee;
-	border-left:1px solid #eee;
-	
-	background-color:#f5f5f5;
+	line-height:1.1em;
+	border:1px solid lighten(@text, 40%);
+	border-top:1px solid lighten(@text, 40%);
+	border-left:1px solid lighten(@text, 50%);
+	.vertical-gradient(@bgcolor, darken(@bgcolor, 15%));
+	.border-radius(0.2em);
 	text-decoration:none;
-	color:#565656;
+	color:@text;
 	cursor:pointer;
 	
-	:hover 
+	&:hover 
 	{
-		background-color:#dff4ff; border:1px solid #c2e1ef; color:#336699;
+	    text-decoration:none;
+		.vertical-gradient(@bgcolor_hover, darken(@bgcolor_hover, 15%));
+		color:@text_hover;
+	    border-color:lighten(@text_hover, 50%) lighten(@text_hover, 40%) lighten(@text_hover, 40%) lighten(@text_hover, 50%);
 	}
 	
-	:active
+	&:active
 	{
+	    text-decoration:none;
 		background-color:#6299c5; border:1px solid #6299c5; color:#fff;
 	}
 }
@@ -49,33 +80,39 @@
 .positive()
 {
 	.button; 
-	
 	color:#529214;
 	
-	:hover
+	&:hover
 	{
-		background-color:#E6EFC2; border:1px solid #C6D880; color:#529214;
+	    .vertical-gradient(#E6EFC2, darken(#E6EFC2, 15%));
+		border:1px solid #C6D880; 
+		color:#529214;
 	}
 	
-	:active
+	&:active
 	{
-		background-color:#529214; border:1px solid #529214; color:#fff;
+	    .vertical-gradient(#529214, darken(#529214, 15%));
+		border:1px solid #529214;
+		color:#fff;
 	}
 }
 
 .negative()
 {
 	.button; 
-	
 	color:#d12f19;
 	
-	:hover
+	&:hover
 	{
-		background:#fbe3e4; border:1px solid #fbc2c4; color:#d12f19;
+	    .vertical-gradient(#fbe3e4, darken(#fbe3e4, 15%));
+		border:1px solid #fbc2c4;
+		color:#d12f19;
 	}
 	
-	:active
+	&:active
 	{
-		background-color:#d12f19; border:1px solid #d12f19; color:#fff;
+	    .vertical-gradient(#d12f19, darken(#d12f19, 15%));
+		border:1px solid #d12f19;
+		color:#fff;
 	}
 }	

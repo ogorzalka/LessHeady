@@ -1,8 +1,26 @@
+// Hides an elements off the page, but keeps it visible for accessibility
 .hide() {
-    /**
-     * Hides an elements off the page, but keeps it visible for accessibility
-     */
-	position:absolute;
-	top:-9999px;
-	left:-9999px;
+    position : absolute;
+    clip : rect(0 0 0 0); 
+    overflow : hidden;
+    margin: -1px;
+    padding : 0;
+    height : 1px;      
+    width : 1px;
+    border : 0;
+}
+
+// Allow an element to be focusable via keyboard
+.focusable-hide() {
+    position : static;
+    clip : auto; 
+    overflow : visible;
+    height : auto; 
+    margin : 0;   
+    width : auto;
+}
+
+// Hide but maintain layout
+.invisible { 
+    visibility : hidden;
 }

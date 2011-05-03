@@ -1,0 +1,12 @@
+//
+// Opacity
+//
+.opacity(@opacity : 1) {
+	@ie_opacity : @opacity * 100;
+	opacity: @opacity;
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-ms-filter: %("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", @ie_opacity);
+	filter: e(%("alpha(opacity=%s)", @ie_opacity));
+}
+

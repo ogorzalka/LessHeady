@@ -1,0 +1,28 @@
+//
+// Specify the size of the background image in pixels or percentage.
+// Firefox 3.6+ can also have values of cover or contain
+// @see https://developer.mozilla.org/en/CSS/-moz-background-size
+//
+ 
+.background-size(@property)
+{
+	-o-background-size:@property;
+	-webkit-background-size:@property;
+	-khtml-background-size:@property;
+	-moz-background-size:@property;
+	background-size:@property;
+}
+
+//
+// Specify whether an element's background, either the color or image, extends underneath its border.
+// Firefox 3.6+ can also have values of cover or contain
+// @see https://developer.mozilla.org/fr/CSS/-moz-background-clip
+//
+
+.background-clip(@property) {
+	-o-background-clip:@property;
+	-webkit-background-clip:@property;
+	-khtml-background-clip:@property;
+	-moz-background-clip:@property;
+	background-clip:@property;
+}

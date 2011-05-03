@@ -1,0 +1,172 @@
+.1140grid() {
+    html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+
+    //
+    // 1140Grid.less
+    // The 1140px Grid V2
+    // Learn more ~ http://cssgrid.net
+    // by Andy Taylor
+
+    // Licensed under GPL and MIT.
+    //
+
+    .container() {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        img, object, embed {
+            max-width: 100%;
+        }
+
+        img {
+	        height: auto;
+        }
+    }
+
+    .col1,
+    .twocol,
+    .threecol,
+    .fourcol,
+    .fivecol,
+    .sixcol,
+    .sevencol,
+    .eightcol,
+    .ninecol,
+    .tencol,
+    .elevencol {
+        margin-right: 3.8%;
+        float: left;
+        min-height: 1px;
+    }
+
+    .col {
+        margin-right: 3.8%;
+        float: left;
+        min-height: 1px;
+
+        &.last {
+            margin-right: 0px;
+        }
+    }
+
+    .row {
+        width: 100%;
+        max-width: 1140px;
+        min-width: 755px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        .col1,
+        .twocol,
+        .threecol,
+        .fourcol,
+        .fivecol,
+        .sixcol,
+        .sevencol,
+        .eightcol,
+        .ninecol,
+        .tencol,
+        .elevencol {
+            .1140grid > .col;
+        }
+
+        .col1 {
+            width: 4.85%;
+        }
+        .twocol {
+            width: 13.45%;
+         }
+
+        .threecol {
+            width: 22.05%;
+        }
+
+        .fourcol {
+            width: 30.75%;
+        }
+
+        .fivecol {
+            width: 39.45%;
+        }
+
+        .sixcol {
+            width: 48%;
+        }
+
+        .sevencol {
+            width: 56.75%;
+        }
+
+        .eightcol {
+            width: 65.4%;
+        }
+
+        .ninecol {
+            width: 74.05%;
+        }
+
+        .tencol {
+            width: 82.7%;
+        }
+
+        .elevencol {
+            width: 91.35%;
+        }
+
+        .twelvecol {
+            width: 100%;
+            float: left;
+        }
+    }
+
+    /* Smaller screens */
+
+    @media only screen and (max-width: 1023px) {
+	    body {
+	        font-size: 0.8em;
+	        line-height: 1.5em;
+	    }
+    }
+
+    /* Mobile */
+
+    @media handheld, only screen and (max-width: 767px) {
+
+	    body {
+	        font-size: 16px;
+	        -webkit-text-size-adjust: none;
+	    }
+
+	    .row, body, .container {
+	        width: 100%;
+	        min-width: 0;
+	        margin-left: 0px;
+	        margin-right: 0px;
+	        padding-left: 0px;
+	        padding-right: 0px;
+	    }
+
+	    .row {
+            .col1,
+            .twocol,
+            .threecol,
+            .fourcol,
+            .fivecol,
+            .sixcol,
+            .sevencol,
+            .eightcol,
+            .ninecol,
+            .tencol,
+            .elevencol,
+            .twelvecol {
+                width: auto;
+                float: none;
+                margin-left: 0px;
+                margin-right: 0px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+}
+

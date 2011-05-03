@@ -1,0 +1,589 @@
+/**
+ * This defines the layout. It creates mixins and constants we
+ * can use, as well as generating a png to use as a grid overlay
+ */
+/*
+    LessHeady : collection of useful less mixins
+    Usage : just include this file inside you less stylesheet via @import 'lessheady/loader';
+*/
+/**
+    CSS Box
+ */
+/**
+    CSS Box flex
+ */
+/**
+* Inline-block
+*
+* Workaround to make the element behave as inline-block
+*
+* @type Mixin
+*/
+/**
+ * CSS3 Multi column layout
+ * @see http://www.css3.info/preview/multi-column-layout/
+ */
+/**
+    Columns count + gap
+ */
+/**
+ * Rotate an element 90, 180 or 270 degrees
+ */
+/**
+ * Gradients are smooth transitions between two or more specified colors.
+ * Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming.
+ * Mozilla (Firefox) supports two kinds of CSS gradients: linear and radial.
+ * @see https://developer.mozilla.org/en/CSS/-moz-linear-gradient
+ */
+/**
+    Box shortcut
+ */
+/**
+    3D Text
+*/
+/**
+    3D box
+*/
+/**
+ * Adds an ellipsis or clips the text 
+ * Options are "ellipsis" or "clip"
+ * @see http://www.css3.info/preview/text-overflow/
+ */
+/**
+    Columns count
+ */
+/**
+    Columns gap
+ */
+/**
+ * Easier way to use css transform
+ */
+/**
+ * Easier way to use css transition
+ */
+/**
+ * Specify the size of the background image in pixels or percentage.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/en/CSS/-moz-background-size
+ */
+/*
+    CSS resize
+*/
+/**
+ * Specify whether an element's background, either the color or image, extends underneath its border.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/fr/CSS/-moz-background-clip
+ */
+/**
+* Opacity
+*
+* Takes a number from 0 to 1.
+
+*/
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+/* Micro clearfix by Nicolas Gallagher */
+/* Success, info, notice and error/alert boxes
+-------------------------------------------------------------- */
+.error {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+}
+.error a {
+  color: #8a1f11;
+}
+.notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324;
+}
+.notice a {
+  color: #514721;
+}
+.success {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880;
+}
+.success a {
+  color: #264409;
+}
+.info {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4;
+}
+.info a {
+  color: #205791;
+}
+/** 
+ * Incremental Leading 
+ *
+ * Every 4 lines of normal type, there are 5 lines of
+ * smaller type 
+ */
+/**
+ * Resets the type back to normal
+ */
+/* Surround uppercase words and abbreviations with this class.
+Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
+/* Give this to links you want to show more information */
+/* Drop Cap */
+/* For some nice Ampersands */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+code,
+del,
+dfn,
+em,
+img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  /**
+     * When photos are upscaled or downscaled, they often get blurry. Don't use
+     * this on flat color images, they will still appear blurry.
+     * Use the +sharpen mixin instead. 
+     * @see https://developer.mozilla.org/en/CSS/image-rendering
+     */
+
+  image-rendering: optimizeQuality;
+  -ms-interpolation-mode: bicubic;
+  /* IE 7+ */
+
+  /**
+    * Reset all
+    *
+    * A more detailed reset, covering most properties
+    *
+    * @type Mixin
+    */
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+table, td, th {
+  vertical-align: middle;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
+a img {
+  border: none;
+}
+img {
+  /**
+     * When photos are upscaled or downscaled, they often get blurry. Don't use
+     * this on flat color images, they will still appear blurry.
+     * Use the +sharpen mixin instead. 
+     * @see https://developer.mozilla.org/en/CSS/image-rendering
+     */
+
+  image-rendering: optimizeQuality;
+  -ms-interpolation-mode: bicubic;
+  /* IE 7+ */
+
+}
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+  white-space: pre;
+}
+mark {
+  background: #ffffd9;
+}
+nav,
+section,
+article,
+header,
+aside,
+footer,
+figure,
+dialog {
+  display: block;
+}
+time,
+progress,
+mark,
+output {
+  display: inline;
+}
+/* --------------------------------------------------------------
+    
+       typography.css
+       * Sets up some sensible default typography.
+    
+    -------------------------------------------------------------- */
+/* Default font settings.
+       The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+html {
+  font-size: 100.01%;
+}
+body {
+  font-size: 75%;
+  line-height: 1.5;
+  /*12/18*/
+
+  background: #fff;
+  color: #3b3b3b;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  /* Stops Mobile Safari from auto-adjusting font-sizes */
+
+}
+/* Selection colours (easy to forget) */
+::selection {
+  background: #ffff9e;
+}
+::-moz-selection {
+  background: #ffff9e;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: #ffff9e;
+}
+/* Headings
+    -------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: 17px/24px Palatino, Constantia, "Palatino Linotype", serif;
+  font-weight: normal;
+  color: #111111;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+h1, h2 {
+  line-height: 36px;
+  margin-bottom: 18px;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 18px;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
+  margin-top: 0;
+}
+h3,
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+h1 {
+  font-size: 36px;
+  top: 5px;
+}
+h2 {
+  font-size: 28px;
+  top: 8px;
+}
+h3 {
+  font-size: 22px;
+  top: 1px;
+}
+h4 {
+  font-size: 18px;
+  top: 2px;
+}
+h5 {
+  font-size: 15px;
+  top: 4px;
+}
+h6 {
+  font-size: 13px;
+  top: 5px;
+}
+p {
+  word-spacing: 0.125em;
+}
+p, pre, address {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+  top: 5px;
+}
+small {
+  font-size: 11px;
+}
+abbr,
+code,
+kbd,
+samp,
+small,
+var {
+  line-height: 15px;
+}
+ul,
+ol,
+dl,
+dialog {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+  top: 5px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+li ul,
+li ol,
+ul ul,
+ol ol {
+  top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+li h1,
+li h2,
+li h3,
+li h4,
+li h5,
+li h6,
+li p {
+  top: 0;
+}
+form, legend, label {
+  font-size: 13px;
+  line-height: 18px;
+}
+legend {
+  position: relative;
+  top: 5px;
+}
+table {
+  font-size: 13px;
+}
+caption {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+}
+hr {
+  position: relative;
+  height: 4px;
+  margin: 18px 0 14px 0;
+}
+body {
+  background: #1e1e1e;
+  background-image: -moz-linear-gradient(top, #000000, #3b3b3b);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#3b3b3b));
+  background-image: -webkit-linear-gradient(top, #000000, #3b3b3b);
+  background-image: -o-linear-gradient(top, #000000, #3b3b3b);
+  background-image: linear-gradient(top, #000000, #3b3b3b);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#3b3b3b)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#3b3b3b)";
+  background-image: -ms-linear-gradient(top, #3b3b3b, #3b3b3b);
+  font-size: 11px;
+  padding: 20px 0 40px 0;
+  color: #fff;
+}
+a {
+  color: #ff9c00;
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
+}
+h2 {
+  padding: 20px 0 0;
+  text-align: center;
+}
+nav {
+  width: 100%;
+  overflow: hidden;
+  /* For modern browsers */
+
+  /* For IE 6/7 (trigger hasLayout) */
+
+  zoom: 1;
+}
+nav:before, nav:after {
+  content: "";
+  display: table;
+}
+nav:after {
+  clear: both;
+}
+nav ul {
+  margin: 0 auto;
+  list-style-type: none;
+  float: left;
+  position: relative;
+  left: 50%;
+}
+nav ul li {
+  float: left;
+  position: relative;
+  right: 50%;
+}
+nav li {
+  font-size: 15px;
+  line-height: 35px;
+  padding: 0 10px;
+  border-right: 1px solid #3b3b3b;
+}
+nav li:last-child {
+  border-right: none;
+}
+nav li a {
+  position: relative;
+  top: -3px;
+}
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+  /* For modern browsers */
+
+  /* For IE 6/7 (trigger hasLayout) */
+
+  zoom: 1;
+  margin-bottom: 20px;
+}
+#wrapper:before, #wrapper:after {
+  content: "";
+  display: table;
+}
+#wrapper:after {
+  clear: both;
+}
+#wrapper h1,
+#wrapper h2,
+#wrapper h3,
+#wrapper h4,
+#wrapper h5 {
+  color: #9abcea;
+}
+#wrapper h1 {
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #1657b1, 1.5px 1.5px 0px #1658b3, 2px 2px 0px #1759b6, 2.5px 2.5px 0px #175ab8, 3px 3px 0px #175bba, 3.5px 3.5px 0px #175dbc, 4px 4px 0px #185ebf, 4.5px 4.5px 0px #185fc1, 5px 5px 0px #1860c3, 5.5px 5.5px 0px #1961c5, 6px 6px 0px #1962c8;
+}
+#wrapper img {
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ddd;
+  float: left;
+  margin: 5px 20px 15px 0;
+}
+#wrapper .grid_3 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 340px;
+}
+#wrapper .grid_6 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 700px;
+}
+#wrapper .grid_12 {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  width: 1420px;
+}
+#wrapper .grid_3, #wrapper .grid_6, #wrapper .grid_12 {
+  border: none;
+  margin-bottom: 10px;
+}
