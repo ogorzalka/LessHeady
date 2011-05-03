@@ -14,9 +14,7 @@ body {
 	padding: 20px 0 40px 0;
 }
 
-form {
-    .formalize;
-}
+.init-forms;
 
 a
 {
@@ -49,25 +47,17 @@ h2 {
 	    font-weight:bold;
 	    .3d-text(darken(#ff8a00, 20%));
     }
-
-    p {
-        border: 1px solid #666;
-        overflow: hidden;
-        padding: @gutter_width 0;
-        text-align: center;
-        background-color:#c8c8c8;
-        margin:5px 0;
+    
+    .validation_msg {
+        .grid(6);
     }
 
    .grid_3 { .grid(3, @gutter_width); }
 
    .grid_6 { .grid(6, @gutter_width); }
 
-   .grid_12 { .grid(12, @gutter_width); }
-
     .grid_3,
-    .grid_6,
-    .grid_12 {
+    .grid_6 {
         .translate(-6px / 2, -6px);
         .vertical-gradient(lighten(#ff8a00, 40%), lighten(#ff8a00, 45%));
         .3d-box(lighten(#ff8a00, 20%));

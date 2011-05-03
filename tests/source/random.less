@@ -4,23 +4,23 @@
  */
 @import '../../lessheady/loader';
 
-.global-reset;
+.init-reset;
 .init-typography;
 
 @column_width: 100px;
 @gutter_width: 10px;
 @column_count: 6;
 
+
 body {
 	.vertical-gradient(#000000, #3b3b3b);
-	font-size: 11px;
-	padding: 20px 0 40px 0;
+	padding: 0px 0 40px 0;
 	color:#fff;
 }
 
 a
 {
-    color: #ff9c00;
+    color: #ff6600;
     text-decoration: none;
 
     :hover {
@@ -59,6 +59,21 @@ nav {
     .clearfix;
     margin-bottom: @gutter_width * 2;
 
+    .main {
+        .clearfix;
+        .vertical-gradient(#dddddd, #ffffff);
+        color:#3b3b3b;
+        position:relative;
+        
+        h1 {
+            margin-top:20px;
+        }
+        
+        h2 {
+            color:#ff6600;
+        }
+    }
+    
 	h1, h2, h3, h4, h5 {
 		color:#9abcea;
 	}
@@ -69,7 +84,7 @@ nav {
 	    color:#fff;
 	    font-weight:bold;
 	    text-transform:uppercase;
-	    .3d-text(#1657b1);
+	    .ribbon(#ff6600);
     }
     
     img {
@@ -77,9 +92,18 @@ nav {
     	.align-left;
     }
 
-   .grid_3 { .grid(3); }
+    #true,
+    #nowlisten {
+        .grid(3);
+        margin-top:15px;
+        font-size:0.9em;
+        
+        h3 {
+            margin-top:0;
+        }
+    }
 
-   .grid_6 { .grid(6); }
+    #intro { .grid(6); }
 
    .grid_12 { .grid(12); }
 
@@ -91,10 +115,14 @@ nav {
     }
     
     p {
+        .fix-text-block;
     	&.btn {
     		text-align:center;
-    		margin-top:10px;
     		a { .action-btn; }
     	}
+    }
+    
+    hr {
+        .sexy-line;
     }
 }

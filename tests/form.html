@@ -10,16 +10,15 @@
 <body>
 <div id="wrapper">
   <form action="" enctype="multipart/form-data" onsubmit="return false;">
+    <fieldset>
     <h1>
       Example of all form elements
     </h1>
-    <nav>
-    	<ul>
-    		<li>
-    			
-    		</li>
-    	</ul>
-    </ul>
+    <div class="validation_msg">
+        <p class="error">You have errors man !</p>
+        <p class="notice">It seems you are very clever !</p>
+        <p class="success">You have correctly fill x field ! Lucky boy !</p>
+    </div>
     <div class="grid_6">
       <input type="checkbox" id="test_checkbox_1" name="test_checkbox_1" />
       <label for="test_checkbox_1">
@@ -219,6 +218,7 @@
 
       <button>Button tag</button>
     </div>
+    </fieldset>
   </form>
 </div>
 </body>
