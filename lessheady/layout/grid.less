@@ -13,11 +13,12 @@
 // layout
 
 .grid_image() {
-    @page_width: @column_width * @column_count + @column_count * @gutter_width  * 2;
-    @real_page_width: @page_width - 2 * @gutter_width;
-    @real_gutter_width: 2 * @gutter_width;
-    @url: %('http://griddle.it/%s-%s-%s', @real_page_width, @column_count, @real_gutter_width);
-    background:transparent url(@url) repeat-y top center !important;
+	body {
+	    @page_width: @column_width * @column_count + @column_count * @gutter_width * 2;
+	    @real_page_width: @page_width - 2 * @gutter_width;
+	    @real_gutter_width: 2 * @gutter_width;
+	    background:transparent e(%("url(http://griddle.it/%s-%s-%s)", @real_page_width, @column_count, @real_gutter_width)) repeat-y top center !important;
+	}
 }
 
 .container() {
