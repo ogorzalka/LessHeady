@@ -1,10 +1,20 @@
+//--------------------------------------------------------------------
+//    
+//   ### Background-size ######
 //
-// Specify the size of the background image in pixels or percentage.
-// Firefox 3.6+ can also have values of cover or contain
-// @see https://developer.mozilla.org/en/CSS/-moz-background-size
+//   Specify the size of the background image in pixels or percentage.
+//   Firefox 3.6+ can also have values of cover or contain  
+//   <https://developer.mozilla.org/en/CSS/-moz-background-size>
 //
- 
-.background-size(@property)
+//   #### Usage ####
+//   `.background-size(100% 100%)`
+//
+//   #### Default value ####
+//   `@property: 100% auto`
+//
+//--------------------------------------------------------------------
+
+.background-size(@property: 100% auto)
 {
 	-o-background-size:@property;
 	-webkit-background-size:@property;
@@ -13,13 +23,24 @@
 	background-size:@property;
 }
 
-//
-// Specify whether an element's background, either the color or image, extends underneath its border.
-// Firefox 3.6+ can also have values of cover or contain
-// @see https://developer.mozilla.org/fr/CSS/-moz-background-clip
-//
 
-.background-clip(@property) {
+//--------------------------------------------------------------------
+//
+//   ### Background-clip ######
+//
+//   Specify whether an element's background, either the color or image, extends underneath its border.
+//   Firefox 3.6+ can also have values of cover or contain
+//   <https://developer.mozilla.org/fr/CSS/-moz-background-clip>
+//
+//   #### Usage ####
+//   `.background-clip(padding-box)`
+//
+//   #### Default value ####
+//   `@property: padding-box`
+//
+//--------------------------------------------------------------------
+
+.background-clip(@property: padding-box) {
 	-o-background-clip:@property;
 	-webkit-background-clip:@property;
 	-khtml-background-clip:@property;
