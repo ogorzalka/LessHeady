@@ -1,39 +1,128 @@
+//--------------------------------------------------------------------
 //
-// Easier way to use css transition
+//   ### Transitions ###
+//   <http://www.w3.org/TR/css3-transitions/>
 //
+//--------------------------------------------------------------------
 
-.transition(@property)
-{
-	-webkit-transition:@property;
-	-moz-transition:@property;
-	transition:@property;
-}
+//--------------------------------------------------------------------
+//
+//   #### Transition property ####
+//
+//   The ‘transition-property’ property specifies the name of the 
+//   CSS property to which the transition is applied. 
+//   <http://www.w3.org/TR/css3-transitions/#transition-property>
+//
+//   ##### Usage #####
+//     
+//   * Value  : `none | all | [ <IDENT> ] [ ‘,’ <IDENT> ]*`
+//   * Default : `all`
+//   * Example : `.transition-property(border-color)`
+//
+//--------------------------------------------------------------------
 
-.transition-property(@property)
+.transition-property(@property: all)
 {
 	-webkit-transition-property:@property;
 	-moz-transition-property:@property;
 	transition-property:@property;
 }
 
-.transition-duration(@property)
+
+//--------------------------------------------------------------------
+//
+//   #### Transition duration ####
+//
+//   The ‘transition-duration’ property defines the length 
+//   of time that a transition takes. 
+//   <http://www.w3.org/TR/css3-transitions/#transition-duration>
+//
+//   ##### Usage #####
+//     
+//   * Value  : `<time> [, <time>]*`
+//   * Default : `0`
+//   * Example : `.transition-duration(0.25s)`
+//
+//--------------------------------------------------------------------
+
+.transition-duration(@property: 0)
 {
 	-webkit-transition-duration:@property;
 	-moz-transition-duration:@property;
 	transition-duration:@property;
 }
 
-.transition-timing-function(@property)
+
+//--------------------------------------------------------------------
+//
+//   #### Transition timing function ####
+//
+//   The ‘transition-timing-function’ property describes how the 
+//   intermediate values used during a transition will be calculated.
+//   These effects are commonly called easing functions.
+//   <http://www.w3.org/TR/css3-transitions/#transition-timing-function>
+//
+//   ##### Usage #####
+//     
+//   * Value  : `ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)]*`
+//   * Default : `ease`
+//   * Example : `.transition-timing-function(linear)`
+//
+//--------------------------------------------------------------------
+
+.transition-timing-function(@property: ease)
 {
 	-webkit-transition-timing-function:@property;
 	-moz-transition-timing-function:@property;
 	transition-timing-function:@property;
 }
 
-.transition-delay(@property)
+
+//--------------------------------------------------------------------
+//
+//   #### Transition delay ####
+//
+//   The ‘transition-delay’ property defines when the transition 
+//   will start. It allows a transition to begin execution 
+//   some some period of time from when it is applied.
+//   <http://www.w3.org/TR/css3-transitions/#transition-delay>
+//
+//   ##### Usage #####
+//     
+//   * Value  : `<time> [, <time>]*`
+//   * Default : `0`
+//   * Example : `.transition-delay(0.50s)`
+//
+//--------------------------------------------------------------------
+
+.transition-delay(@property: 0)
 {
 	-webkit-transition-delay:@property;
 	-moz-transition-delay:@property;
 	transition-delay:@property;
+}
+
+
+//--------------------------------------------------------------------
+//
+//   #### Transition shorthand ####
+//
+//   The ‘transition’ shorthand property combines the four 
+//   properties described above into a single property. 
+//   <http://www.w3.org/TR/css3-transitions/#the-transition-shorthand-property->
+//
+//   ##### Usage #####
+//     
+//   * Value  : `[<‘transition-property’> || <‘transition-duration’> || <‘transition-timing-function’> || <‘transition-delay’> [, [<‘transition-property’> || <‘transition-duration’> || <‘transition-timing-function’> || <‘transition-delay’>]]*`
+//   * Default : `all 0.25s ease`
+//   * Example : `.transition(border-color, 0.50s, linear)`
+//
+//--------------------------------------------------------------------
+
+.transition(@property: all, @duration: 0.25s, @animation-type: ease)
+{
+	-webkit-transition:@arguments;
+	-moz-transition:@arguments;
+	transition:@arguments;
 }
 

@@ -55,13 +55,22 @@ class Doc {
             $explode_dir = explode('/', dirname($real_location));
             $title_dir = end($explode_dir);
             $filename = str_replace('.less', '', $real_location);
-            
+           
             if (!array_key_exists($title_dir, self::$doc_items)) {
                 self::$doc_items[$title_dir] = array(
                     'title' => ucfirst($title_dir),
                     'location' => dirname($f).'/',
-                    'items' => array()
+                    'items' => array(),
+                    'content' => false,
                 );
+            }
+            
+            if (self::$doc_items[$title_dir]['content'] === false) {
+                if (file_exists(dirname($f).'/README')) {
+                    self::$doc_items[$title_dir]['content'] = self::format_text(file_get_contents(dirname($f).'/README'));
+                } else {
+                    self::$doc_items[$title_dir]['content'] = '';
+                }
             }
             
             $parsed_content = self::parse($f);

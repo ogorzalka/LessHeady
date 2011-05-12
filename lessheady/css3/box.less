@@ -1,47 +1,152 @@
+//--------------------------------------------------------------------
 //
-// Easier way to use box properties
+//   ### Box Properties ###
+//   <http://www.w3.org/TR/css3-box/> 
+//   <http://www.w3.org/TR/css3-background/#the-box-shadow>
 //
+//--------------------------------------------------------------------
 
-.box-shadow(@properties)
+//--------------------------------------------------------------------
+//    
+//   #### Box-shadow ####
+//
+//   The 'border-radius' property give an inset or drop shadow to
+//   a block element. 
+//   <http://www.w3.org/TR/css3-background/#the-box-shadow>
+//
+//   ###### Usage ######
+//     
+//   * Value  : `none | <shadow> [ , <shadow> ]*`
+//   * Default : `0px 0px 5px #333333`
+//   * Example : `.box-shadow(5px 5px 5px rgba(0.5))`
+//
+//   ###### Alternate mixins ######
+//   
+//   * .3d-text();
+//   * .3d-box();
+//
+//--------------------------------------------------------------------
+
+.box-shadow(@property: 0px 0px 5px #333333)
 {
-	-moz-box-shadow:@properties;
-	-webkit-box-shadow:@properties;
-	box-shadow:@properties;
+	-o-box-shadow:@property;
+	-webkit-box-shadow:@property;
+	-khtml-box-shadow:@property;
+	-moz-box-shadow:@property;
+	box-shadow:@property;
 }
 
-.box-pack(@property : center) {
+
+//--------------------------------------------------------------------
+//    
+//   #### Box-pack ####
+//
+//   The CSS box-pack property specifies how a box packs its contents
+//   in the direction of its layout. The effect of this is only visible if there is extra space in the box.
+//
+//   ##### Usage #####
+//     
+//   * Value  : `[ start | end | center | justify ]`
+//   * Default : `start`
+//   * Example : `.box-pack(center)`
+//
+//--------------------------------------------------------------------
+
+.box-pack(@property : start) {
     -webkit-box-pack: @property;
     -moz-box-pack: @property;
     box-pack: @property;
 }
 
-.box-orient(@property : horizontal) {
+
+//--------------------------------------------------------------------
+//    
+//   #### Box-orient ####
+//
+//   The CSS box-orient property specifies whether an element lays
+//   out its contents horizontally or vertically.
+//
+//   ##### Usage #####
+//     
+//   * Value  : `[ horizontal | vertical | inline-axis | block-axis | inherit ]`
+//   * Default : `inline-axis`
+//   * Example : `.box-orient(vertical)`
+//
+//--------------------------------------------------------------------
+
+.box-orient(@property : inline-axis) {
     -webkit-box-orient: @property;
     -moz-box-orient: @property;
     box-orient: @property;
 }
 
-.box-align(@property : center) {
+
+//--------------------------------------------------------------------
+//    
+//   #### Box-align ####
+//
+//   The CSS box-align property specifies whether an element lays
+//   out its contents horizontally or vertically.
+//
+//   ##### Usage #####
+//     
+//   * Value  : `[ start | center | end | baseline | stretch ]`
+//   * Default : `stretch`
+//   * Example : `.box-orient(baseline)`
+//
+//--------------------------------------------------------------------
+
+.box-align(@property : stretch) {
     -webkit-box-align: @property;
     -moz-box-align: @property;
     box-align: @property;
 }
 
-.box-flex( @property : 1 ) {
+
+//--------------------------------------------------------------------
+//    
+//   #### Box-flex ####
+//
+//   The CSS box-flex property specifies how a box grows to fill 
+//   the box that contains it, in the direction of the containing
+//   box's layout.
+//
+//   ##### Usage #####
+//     
+//   * Value  : `number`
+//   * Default : `0`
+//   * Example : `.box-flex(1)`
+//
+//--------------------------------------------------------------------
+
+.box-flex( @property : 0 ) {
     -webkit-box-flex: @property;
     -moz-box-flex: @property;
     box-flex: @property;
 }
 
-.box-sizing(@property)
+
+//--------------------------------------------------------------------
+//    
+//   #### Box-sizing ####
+//
+//   The box-sizing CSS property is used to alter the default 
+//   CSS box model used to calculate widths and heights of elements.
+//   It is possible to use this property to emulate the behavior 
+//   of browsers that do not correctly support the CSS 
+//   box model specification.
+//
+//   ##### Usage #####
+//     
+//   * Value  : `[ content-box | border-box ]`
+//   * Default : `content-box`
+//   * Example : `.box-sizing(border-box)`
+//
+//--------------------------------------------------------------------
+
+.box-sizing(@property: content-box)
 {
 	-webkit-border-sizing:@property;
 	-moz-border-sizing:@property;
 	border-sizing:@property;
-}
-
-.resize( @direction ) {
-    -webkit-resize: @direction;
-    -moz-resize: @direction;
-    resize: @direction;
 }

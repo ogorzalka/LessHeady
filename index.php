@@ -9,7 +9,7 @@ $documentation = $docs->get_content();
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>LessHeady : Easier styling with lessjs</title>
         <link rel="stylesheet/less" type="text/css" href="css/global.less">
-        <script src="js/less-1.0.41.min.js"></script>
+        <script src="js/less-1.1.0.min.js"></script>
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -24,25 +24,34 @@ $documentation = $docs->get_content();
                     <h3>Easier styling with lessjs</h3>
                 </hgroup>
             </header>
-            <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
+            <nav class="mainnav"> <!-- The nav link semantically marks your main site navigation -->
                 <ul>
                     <?php foreach($documentation as $key=>$contents): ?>
-                    <li><a href="#<?php echo $key; ?>"><?php echo $contents['title']; ?>3</a></li>
+                    <li><a href="#<?php echo $key; ?>"><?php echo $contents['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </nav>
-            <section id="articles"> <!-- A new section with the articles -->
+            <div id="articles"> <!-- A new section with the articles -->
                 <?php foreach($documentation as $key=>$contents): ?>
-                    <article id="<?php echo $key; ?>">
+                    <section id="<?php echo $key; ?>">
+                        <header class="mainheader">
                         <h2><?php echo $contents['title']; ?></h2>
+                        <?php echo $contents['content']; ?>
                         <p class="location"><span>Location : </span> <?php echo $contents['location']; ?></p>
+                        </header>
                         <?php foreach($contents['items'] as $data): ?>
+                            <section class="items">
+                            <?php $i = 0; ?>
                             <?php foreach($data['content'] as $content): ?>
+                            <?php echo '<'.(($i == 0) ? 'header' : 'article').'>'; ?>
                             <?php echo $content; ?>
                             <p class="location"><span>Location : </span> <?php echo $data['location']; ?></p>
+                            <?php echo '</'.(($i == 0) ? 'header' : 'article').'>'; ?>
+                            <?php $i++; ?>
                             <?php endforeach; ?>
+                            </section>
                         <?php endforeach; ?>
-                    </article>
+                    </section>
                 <?php endforeach; ?>
                 <!--
                 <article id="article1">
@@ -65,7 +74,7 @@ $documentation = $docs->get_content();
 
                 -->
 
-            </section>
+            </div>
 
         <footer> <!-- Marking the footer section -->
 
@@ -79,7 +88,7 @@ $documentation = $docs->get_content();
             
 		</section> <!-- Closing the #page section -->
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
         <script src="js/jquery.scrollTo-min.js"></script>
         <script src="js/global.js"></script>
     </body>

@@ -1,0 +1,53 @@
+//--------------------------------------------------------------------
+//
+//   ### CSS3 Basic User Interface Module ###
+//   <http://www.w3.org/TR/css3-ui/>
+//
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//    
+//   #### Appearance ####
+//
+//   The 'appearance' property can be used to make an element
+//   look like a standard user interface 
+//   element on the platform. 
+//   <http://www.w3.org/TR/css3-ui/#appearance>
+//
+//   ###### Usage ######
+//     
+//   * Value  : `normal | <appearance> | inherit`
+//   * Default : `normal`
+//   * Example : `.appearance(button)`
+//
+//--------------------------------------------------------------------
+
+.appearance(@mode: normal) {
+    -moz-appearance: @mode;
+    -webkit-appearance: @mode;
+    appearance: @mode;
+}
+
+
+//--------------------------------------------------------------------
+//    
+//   #### Resize ####
+//
+//   The 'resize' property allows the author to specify whether or 
+//   not an element is resizable by the user, and if so, 
+//   along which axis/axes. 
+//   <http://www.w3.org/TR/css3-ui/#resize>
+//
+//   ###### Usage ######
+//     
+//   * Value  : `[ none | both | horizontal | vertical | inherit ]`
+//   * Default : `content-box`
+//   * Example : `.box-sizing(border-box)`
+//
+//--------------------------------------------------------------------
+
+.resize( @direction ) {
+    -webkit-resize: @direction;
+    -moz-resize: @direction;
+    resize: @direction;
+}
